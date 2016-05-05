@@ -1,0 +1,194 @@
+Skip to content
+Python
+PSF
+Docs
+PyPI
+Jobs
+Community
+Python Software Foundation
+ Search This Site 
+Search
+  GO
+Socialize
+Google+
+Facebook
+Twitter
+Chat on IRC
+Sign In
+Sign Up / Register
+Sign In
+About
+Executive Summary
+Mission statement
+Public records
+PSF Workgroups
+Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs. Learn more about Python..
+ 
+Membership
+Sponsor Membership
+Membership FAQ
+Membership roster
+League
+Sign up as member
+Self-certify as voting member
+Python Community Code of Conduct
+ 
+Donations & Grants
+Donations
+Volunteer
+Contribution forms
+Grants program
+Suspicious checks
+Outreach & Education
+Sprints Funding
+ 
+Legal
+Bylaws
+Trademark policy
+Weblog policy
+License
+ 
+Media
+Press releases
+Awards
+Logo
+ 
+PSF Blog
+PSF>>>  Membership
+PSF Membership FAQ
+
+The mission of the Python Software Foundation is to promote, protect, and advance the Python programming language, and to support and facilitate the growth of the international community of Python programmers.
+
+—from the Mission Statement page
+
+What does it mean to be a member of the PSF?
+What does the PSF do?
+What membership classes are there?
+Who is allowed to vote?
+How does a person become a PSF Fellow?
+How can I ask other questions?
+What does it mean to be a member of the PSF?
+Being part of the PSF means being part of the Python community. In 2014, we changed the bylaws to make the PSF an open membership organization, so that everyone who uses and supports Python can join.
+
+For those who wish to do more, we have classes of membership for those who contribute time, work, and money to the foundation.
+
+What does the PSF do?
+The majority of the PSF's work is focused on empowering and supporting people within the Python community. The PSF has active grant programs that support sprints, conferences, meetups, user groups, and Python development efforts all over the world. In addition, the PSF underwrites and runs PyCon US, the primary Python community conference.
+
+The PSF serves as a primary point of contact for organizations seeking to work with Python, to support Python, or to sponsor Python development. The PSF provides a structure by which work, donations and sponsorships can be coordinated worldwide.
+
+The PSF also holds and protects the intellectual property associated with Python and the Python community - like the word "Python," the two-snakes logo, and the terms "PyLadies" and "PyCon." We make sure that these terms are used appropriately and only for the benefit of the Python community.
+
+What membership classes are there?
+There are six classes of members: Basic Members, Supporting Members, Sponsor Members, Managing Members, Contributing Members and Fellows.
+
+Basic members
+Basic members are individuals or entities who are part of the Python language community and who have decided to declare their support for Python and agree to the community Code of Conduct. You can sign up as a basic member right here on the site.
+
+Supporting members
+Supporting members make an annual donation to the PSF to sustain the Foundation and support the Python community. For the time being, you can sign up as a supporting member through the Associate Member program (this is an older membership program that is in the progress of being migrated to the new membership structure).
+
+Sponsor members
+Sponsor members are organizations that support the PSF through a yearly fee, substantial in-kind donations, and dedicated work on behalf of the PSF and the community. Sponsor members may provide people to be delegates that participate in the work of the PSF. Sponsor membership details can be found here.
+
+Managing members
+Managing members are people who dedicate at least five hours per month working to support the Python ecosystem in one or the PSF's working groups - by helping organize, manage, run infrastructure, etc. For details on signing up as a managing member, refer to this post on the PSF blog.
+
+Contributing members
+Contributing members are people who dedicate at least five hours per month working on projects that advance the mission of the PSF, where the work relates to the creation or maintenance of open source software available to the public at no charge. For details on signing up as a contributing member, refer to this post on the PSF blog.
+
+Fellows
+Fellows are members who have been nominated for their extraordinary efforts and impact upon Python, the community, and the broader Python ecosystem. Fellows are nominated from the broader community and elevated by a vote of the members.
+
+Who is allowed to vote?
+To vote you must be 1) eligible to vote, and then 2) elect to exercise voting privileges.
+
+Who is eligible: Supporting members, sponsor delegates, managing members, contributing members, and fellows are eligible for voting privileges.
+
+Exercising voting privileges: Each person that is eligible for voting privileges must then elect each year whether or not to exercise the right to vote. Voting is a use-it-or-lose-it privilege; missing four votes within a calendar year removes voting privileges for the rest of the year.
+
+How does a person become a PSF Fellow?
+The criteria for becoming a PSF Fellow are as follows:
+
+For those who have served the Python community by creating and/or maintaining various creative contributions, the following statement should be true:
+
+"[Nominated Person] has served the Python community by making available code, tests, documentation, or design, either in a Python implementation or in a Python ecosystem project, that 1) shows technical excellence, 2) is an example of software engineering principles and best practices, and 3) has achieved widespread usage or acclaim."
+
+For those who have served the Python community by coordinating, organizing, teaching, writing, and evangelizing, the following statement should be true:
+
+"[Nominated Person] has served the Python community through extraordinary efforts in organizing Python events, publicly promoting Python, and teaching and coordinating others. [Nominated Person]'s efforts have shown leadership and resulted in long-lasting and substantial gains in the number and quality of Python users, and have been widely recognized as being above and beyond normal volunteering."
+
+In all that this person does, [Nominated Person] is an example of what we aspire to be in the Python community.
+
+How can I ask other questions?
+Please send questions to psf@python.org.
+
+The PSF
+The Python Software Foundation is the organization behind Python. Become a member of the PSF and help advance the software and our mission.
+Tweets by @ThePSF
+About
+Applications
+Quotes
+Getting Started
+Help
+Python Brochure
+Downloads
+All releases
+Source code
+Windows
+Mac OS X
+Other Platforms
+License
+Alternative Implementations
+Documentation
+Docs
+Audio/Visual Talks
+Beginner's Guide
+Developer's Guide
+FAQ
+Non-English Docs
+PEP Index
+Python Books
+Community
+Diversity
+IRC
+Mailing Lists
+Python Conferences
+Special Interest Groups
+Python Wiki
+Python Logo
+Merchandise
+Community Awards
+Success Stories
+Arts
+Business
+Education
+Engineering
+Government
+Scientific
+Software Development
+News
+Python News
+Community News
+PSF News
+PyCon News
+Events
+Python Events
+User Group Events
+Python Events Archive
+User Group Events Archive
+Submit an Event
+Contributing
+Developer's Guide
+Issue Tracker
+python-dev list
+Core Mentorship
+Help & General Contact
+ 
+Diversity Initiatives
+ 
+Submit Website Bug
+ 
+Status 
+Copyright ©2001-2016.  Python Software Foundation  Legal Statements  Privacy Policy

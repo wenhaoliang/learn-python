@@ -1,0 +1,181 @@
+Skip to content
+Python
+PSF
+Docs
+PyPI
+Jobs
+Community
+Python Software Foundation
+ Search This Site 
+Search
+  GO
+Socialize
+Google+
+Facebook
+Twitter
+Chat on IRC
+Sign In
+Sign Up / Register
+Sign In
+About
+Executive Summary
+Mission statement
+Public records
+PSF Workgroups
+Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+You can learn to use Python and see almost immediate gains in productivity and lower maintenance costs. Learn more about Python..
+ 
+Membership
+Sponsor Membership
+Membership FAQ
+Membership roster
+League
+Sign up as member
+Self-certify as voting member
+Python Community Code of Conduct
+ 
+Donations & Grants
+Donations
+Volunteer
+Contribution forms
+Grants program
+Suspicious checks
+Outreach & Education
+Sprints Funding
+ 
+Legal
+Bylaws
+Trademark policy
+Weblog policy
+License
+ 
+Media
+Press releases
+Awards
+Logo
+ 
+PSF Blog
+PSF>>>  About
+About the Python Software Foundation
+
+Contents
+
+What is the Python Software Foundation?
+Who are PSF members?
+Who are on the PSF board? Who are the officers?
+How do I reach the PSF?
+How do I join the PSF?
+How can I follow PSF activities?
+Received a Suspicious Check?
+What is the Python Software Foundation?
+From the PSF Mission Statement:
+
+The mission of the Python Software Foundation is to promote, protect, and advance the Python programming language, and to support and facilitate the growth of a diverse and international community of Python programmers.
+
+The Python Software Foundation (PSF) is a non-profit membership organization devoted to advancing open source technology related to the Python programming language. It qualifies under the US Internal Revenue Code as a tax-exempt 501(c)(3) scientific and educational public charity, and conducts its business according to the rules for such organizations.
+
+The PSF is a corporation according to U.S. tax law, incorporated in the state of Delaware. Our federal taxpayer ID ("04 number") is 04-3594598.
+
+For a quick overview of the PSF's activities, please see the Executive Summary.
+
+Who are PSF members?
+For the full list of members, please refer to the membership roster. For information about membership, please see the membership FAQ.
+
+Who are on the PSF board? Who are the officers?
+The PSF board and officers are also listed on the membership roster.
+
+How do I reach the PSF?
+Send email to psf@python.org.
+
+Send postal mail to
+
+Python Software Foundation
+9450 SW Gemini Dr.
+ECM# 90772
+Beaverton, OR 97008
+USA
+Send faxes to +1 858 712 8966.
+
+See also details for wire transfers.
+
+How do I join the PSF?
+Joining the PSF as a basic member is a matter of wanting to join and agreeing to abide by the PSF Code of Conduct when acting as a member of the PSF. See the membership FAQ for detailed information on both basic membership and the other kinds of membership available to individuals.
+
+Sponsor memberships are also available for organisations. See the sponsorship page for details.
+
+How can I follow PSF activities?
+psf-members is a discussion list for members of the Python Software Foundation to communicate among each other. psf-members-announce is a moderated, low traffic list used for announcements to the PSF members.
+
+Python Software Foundation News is a blog announcing and discussing PSF activities. You can follow it on Twitter as well.
+
+Received a Suspicious Check?
+If you have received a suspicious check claiming to be from the Python Software Foundation, it may be fraudulent.
+
+The PSF
+The Python Software Foundation is the organization behind Python. Become a member of the PSF and help advance the software and our mission.
+Tweets by @ThePSF
+About
+Applications
+Quotes
+Getting Started
+Help
+Python Brochure
+Downloads
+All releases
+Source code
+Windows
+Mac OS X
+Other Platforms
+License
+Alternative Implementations
+Documentation
+Docs
+Audio/Visual Talks
+Beginner's Guide
+Developer's Guide
+FAQ
+Non-English Docs
+PEP Index
+Python Books
+Community
+Diversity
+IRC
+Mailing Lists
+Python Conferences
+Special Interest Groups
+Python Wiki
+Python Logo
+Merchandise
+Community Awards
+Success Stories
+Arts
+Business
+Education
+Engineering
+Government
+Scientific
+Software Development
+News
+Python News
+Community News
+PSF News
+PyCon News
+Events
+Python Events
+User Group Events
+Python Events Archive
+User Group Events Archive
+Submit an Event
+Contributing
+Developer's Guide
+Issue Tracker
+python-dev list
+Core Mentorship
+Help & General Contact
+ 
+Diversity Initiatives
+ 
+Submit Website Bug
+ 
+Status 
+Copyright ©2001-2016.  Python Software Foundation  Legal Statements  Privacy Policy

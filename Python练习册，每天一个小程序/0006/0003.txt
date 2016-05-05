@@ -1,0 +1,174 @@
+Skip to content
+Python
+PSF
+Docs
+PyPI
+Jobs
+Community
+Python Software Foundation
+ Search This Site 
+Search
+  GO
+Socialize
+Google+
+Facebook
+Twitter
+Chat on IRC
+Sign In
+Sign Up / Register
+Sign In
+About
+Executive Summary
+Mission statement
+Public records
+PSF Workgroups
+ 
+Membership
+Sponsor Membership
+Membership FAQ
+Membership roster
+League
+Sign up as member
+Self-certify as voting member
+Python Community Code of Conduct
+ 
+Donations & Grants
+Donations
+Volunteer
+Contribution forms
+Grants program
+Suspicious checks
+Outreach & Education
+Sprints Funding
+ 
+Legal
+Bylaws
+Trademark policy
+Weblog policy
+License
+ 
+Media
+Press releases
+Awards
+Logo
+ 
+PSF Blog
+PSF>>>  Donations & Grants
+Donate to the PSF!
+
+What does the Python Software Foundation do?
+The Python Software Foundation:
+
+Holds and defends the copyright and other intellectual property rights for the Python programming language.
+Holds and defends the copyright and trademark for the Jython implementation of Python.
+Awards grants and provides resources for furthering the development and adoption of Python.
+Organizes the annual PyCon conference.
+Pays for hardware and other costs for hosting the python.org servers.
+Supports other conferences, meetings, and community activities.
+Recognizes individuals who have contributed to the Python community with Community Awards.
+To learn about recent PSF activities, visit the Python Software Foundation's weblog.
+
+How can I donate?
+We welcome contributions from both organizations and individuals.
+
+Donate by credit card
+
+Please use the PayPal button below to donate by credit card. You don't need a PayPal account to use the donation button.
+
+Note: For amounts greater than US$1,300.00, paying by wire transfer or check will get more of your donation to the PSF.
+
+Donate through PayPal by clicking on the button below.
+
+PayPal - The safer, easier way to pay online 
+Mail a personal check, money order, or bank check
+
+Address checks to the PSF headquarters.
+
+If you would like a receipt emailed to you, please include your email address along with your check.
+
+Checks in US currency are preferred. We can accept other currencies for donations valued US$20 or more, but fees on conversions are significant.
+
+Electronic wire transfers
+
+Please see Wire Transfer Info for details.
+
+The transaction fees are substantial, so please only use transfers for donations valued at US$50 or more.
+
+For US taxpayers, contributions to the PSF are tax-deductible. The PSF has been recognized as a public charity under section 501(c)(3) of the Internal Revenue Code. (See the exemption letter for details.) You should consult your tax adviser for rules as they apply to your situation.
+
+Donations to the PSF are currently not tax-deductible in most other countries; most countries require an organisation to be incorporated in that country (or in the EU, for EU member states), and the PSF does currently not have the resources to do so.
+
+If you have a question about donations, please write to the PSF at (psf@python.org).
+
+Donors
+The PSF would like to thank the following donors for their contributions. Donors are listed in descending order using an algorithm that takes into account both the amount of donation and the age of the donation.
+
+The donors list is being ported to the new website. Please see our previous donation page for the current list. It gets updated daily. Thank you.
+The PSF
+The Python Software Foundation is the organization behind Python. Become a member of the PSF and help advance the software and our mission.
+Tweets by @ThePSF
+About
+Applications
+Quotes
+Getting Started
+Help
+Python Brochure
+Downloads
+All releases
+Source code
+Windows
+Mac OS X
+Other Platforms
+License
+Alternative Implementations
+Documentation
+Docs
+Audio/Visual Talks
+Beginner's Guide
+Developer's Guide
+FAQ
+Non-English Docs
+PEP Index
+Python Books
+Community
+Diversity
+IRC
+Mailing Lists
+Python Conferences
+Special Interest Groups
+Python Wiki
+Python Logo
+Merchandise
+Community Awards
+Success Stories
+Arts
+Business
+Education
+Engineering
+Government
+Scientific
+Software Development
+News
+Python News
+Community News
+PSF News
+PyCon News
+Events
+Python Events
+User Group Events
+Python Events Archive
+User Group Events Archive
+Submit an Event
+Contributing
+Developer's Guide
+Issue Tracker
+python-dev list
+Core Mentorship
+Help & General Contact
+ 
+Diversity Initiatives
+ 
+Submit Website Bug
+ 
+Status 
+Copyright ©2001-2016.  Python Software Foundation  Legal Statements  Privacy Policy

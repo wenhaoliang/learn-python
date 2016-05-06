@@ -6,13 +6,13 @@ from bs4 import BeautifulSoup
 import requests
 
 def get_links(html):
-	soup = BeautifulSoup(html,"lxml")
-	links = []
+	soup = BeautifulSoup(html,"lxml")#创建bs对象
+	links = []#创建列表
 	for link in soup.find_all("a"):
-			href = link["href"]
+			href = link["href"]#将找到的href标签赋值给href
 			if href.startswith("http"):
-				links.append(href)
-	fp = open("result.txt","w")
+				links.append(href)#将其添加到links
+	fp = open("result.txt","w")#写入txt中
 	for item in links:
 		fp.write(item)
 		fp.write("\n")

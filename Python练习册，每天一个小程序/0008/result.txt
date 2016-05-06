@@ -1,0 +1,519 @@
+用Python os.listdir判断相关路径是否为文件的方案 - 51CTO.COM
+
+
+
+
+
+
+
+
+
+.bds_tools a{ padding:0; margin:0;}
+.g_39.mb10:has(> #tonglanad){display:none;position:absolute;top:-1000000px;visibility:hidden}.banner_head > a[href*="_adid="]{display:none;position:absolute;top:-1000000px;visibility:hidden}#s3 + .g_39.mb10{display:none;position:absolute;top:-1000000px;visibility:hidden}[id^="ad_w_0"]{display:none;position:absolute;top:-1000000px;visibility:hidden}li[id^="ad_"]:not(.banner_head){display:none;position:absolute;top:-1000000px;visibility:hidden}p.ad,#js_ads_banner_top,.topad,.adbox,#tonglanad{display:none;position:absolute;top:-1000000px;visibility:hidden}
+
+hQGHuMEAyLn('.g_39.mb10:has(> #tonglanad)');
+hQGHuMEAyLn('#tonglanad,.adbox,.topad,li[id^="ad_"]:not(.banner_head),#js_ads_banner_top,[id^="ad_w_0"],#s3 + .g_39.mb10,p.ad,.banner_head > a[href*="_adid="]');
+分享到一键分享QQ空间新浪微博百度云收藏人人网腾讯微博百度相册开心网腾讯朋友百度贴吧豆瓣网搜狐微博百度新首页QQ好友和讯微博更多...百度分享
+
+_guanggao_pub= "d3e1528ecb40edd9ff8a";_guanggao_slot= "143cca21da8d64ae96e5";
+  首页技术频道51CTO旗下网站地图    招聘学院下载论坛博客更多  登录注册  
+
+
+网络
+安全
+开发
+数据库
+服务器
+系统
+虚拟化
+云计算
+嵌入式
+移动开发
+
+
+
+
+51CTO.COM
+CIOage.com
+WatchStor.com
+HC3i.cn
+
+
+
+
+$(function(){
+	$(".bann").height(265);	 
+	$(".bann").css("background-color","white");
+	$(".hot").css("top","450px");
+	//$(".fixfloat").css("height","640px");
+	$(".g_13").find(".focus").css("height","640px");
+});
+var edunum=2;
+$(function(){
+	$("#change").click(function(){
+		$("#edu > ul").css("display","none");
+		var eduid='edu'+edunum;
+		$("#" + eduid).css("display","block");	
+		if(edunum<4){
+			edunum++;	
+		}else{
+			edunum=1;	
+		}							
+	});  
+});
+
+
+
+家园
+招聘
+学院
+博客
+论坛
+下载
+自测
+门诊
+周刊
+读书
+题库
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+首页 | Java | .NET | Web | 语言工具 | 测试 | 移动 | 架构 | 项目管理 | 大数据 | 全部文章
+
+
+
+
+
+
+
+
+
+
+
+
+您所在的位置：开发 > Web > Python >  用Python os.listdir判断相关路径是否为文件的方案 
+用Python os.listdir判断相关路径是否为文件的方案
+
+2010-03-24 09:29  佚名  博客园  字号：T | T
+
+
+
+
+os.listdir 函数在实际相关应用中其功能是十分强大的，那么你是否想了解os.listdir 函数在Python中的具体应用的操作步骤。
+AD：网+线下沙龙 | 移动APP模式创新：给你一个做APP的理由>>
+
+
+
+
+
+
+
+
+
+
+
+在Python os.listdir 中我们可以列出关于dir 里面的所有的相关文件与目录的具体操作方案的介绍，以及我们在实际如何用Python中的os.path.isfile()函数来判断相关路径是否为文件的操作方案，以下是文章的具体介绍。
+Python判断是否为文件在Python os.listdir 函数判断某一路径是否为文件。其函数原型如下所示。
+
+os.path.isfile(path)
+其参数含义如下。path：要进行判断的路径。以下实例判断E:\book\temp是否为文件。
+
+>>>importos >>>os.path.isfile('E:\\book\\temp') 
+判断是否为文件
+False
+表示E:\book\temp不是文件列出目录中所有文件的方法
+关键字:
+dirimportstring,os,sys dir='/var'print'-----------nosubdir' files=os.listdir(dir) forfinfiles: printdir+os.sep+f print'-----------alldir' forroot,dirs,filesinos.walk(dir): fornameinfiles: printos.path.join(root,name) 
+
+前面的Python os.listdir 可以列出 dir 里面的所有文件和目录，但不包括子目录中的内容。os.walk 可以遍历下面的所有目录，包括子目录。
+
+【编辑推荐】
+
+用Python操作文件如何查看目录内容的具体方法
+Python文件的详细信息的相关介绍与具体分析
+Python文件复制中如何复制相关文件的实际操作
+用Python分解路径名的典型例子解说其实际操作
+Python目录的创建与移动以其典型例子进行解析
+【责任编辑：孙巧华 TEL：（010）68476606】
+
+ 原文：用Python os.listdir判断相关路径是否为文件的方案 返回开发首页 
+
+
+
+
+
+
+
+
+分享到：
+
+
+
+
+
+
+
+
+1
+
+
+
+	var bds_config = {'snsKey':{'tsina':'2378297317'}};
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+
+
+收藏|打印|复制
+
+
+
+
+
+内容点评已有0条评论,0次赞还可以输入500字请输入你的评论提交您还没有登录！请先登录或注册还没有评论内容
+
+
+
+
+关于Python os.listdir 的更多文章
+
+
+用Python os.listdir判断相关路径是否为文
+
+
+Python实用开发指南
+
+Python是一种即译式的，互动的，面向对象的编程语言，它包含了模[详细]
+
+
+
+
+
+
+
+    /*633*90 创建于 2015-11-05文章页广告（评论下方）*/
+    var cpro_id = "u2386935";
+
+
+
+
+
+
+
+栏目热门
+更多>>
+
+聊聊Python用rpc实现分布式系统调用的那些
+Python开发指南：最佳实践精选
+Python语言中计数方法的演变
+Python 2.7.x 和 3.x 版本的重要区别
+提供给开发者 10 款最好的 Python IDE
+
+
+
+
+同期最新
+更多>>
+
+在Python编程语言中使用os.path.isdir()函
+Python编程语言获的目录内容及创建目录的方
+Python os.mkdir()函数创建目录的实际操作
+Python os.getcwd()函数的实际应用方案介绍
+Python递归文件中os模块的实际相关应用方案
+
+
+
+
+
+开发
+频道导航
+
+Java
+Java开发|Java基础|Java EE开发|Java框架|设计模式
+
+WEB开发
+PHP开发|Python|Ruby|JSP|HTML 5|DIV+CSS
+
+综合
+.NET开发|嵌入式开发|项目管理|架构设计
+
+
+
+
+
+
+
+
+热点推荐
+
+
+Android开发应用详解
+
+那些性感的让人尖叫的程序员
+
+HTML5 下一代Web开发标准详解
+
+高性能WEB开发应用指南
+
+Ubuntu开源技术交流频道
+
+热门标签： windows频道移动开发云计算objective-ctp-link路由器设置图解html5 
+ 
+
+
+
+
+
+
+热点  技术红颜告诉你大数据分析的真谛 
+
+大数据时代已经到来，每个企业都开始忙着数据挖掘，忙着数据分析，忙着构建各种算法模型。但为什么你无法引发“技术红颜”式的蝴蝶效应?为什么你眼中对用户的“精准推荐”，成了Ta备感厌烦的“精准骚扰”
+看待Docker 和 PaaS的正确视角基于Docker和Mesos的服务可靠性保障实践
+
+
+
+
+
+
+    /*300*250 创建于 2015-12-16文章页右侧视频课程上方*/
+    var cpro_id = "u2452179";
+
+
+
+
+
+视频课程
+换一换
+
+2.17.从三星官方内核开始移植-uboot与系统移讲师：朱有鹏 26人学习过数据可视化-Excel 自助式商业智能Power BI实讲师：宋立桓 14人学习过团队项目管理工具：Maven3入门实战视频课程讲师：肖海鹏 34人学习过爱享读书《团队协作的五大障碍》视频课程讲师：何勇 9人学习过Dede织梦仿站建站：仿“汉后阿胶”网 解决防讲师：童攀 16人学习过蓝鸥Unity开发视频教程之C＃语言入门讲师：宋博 11人学习过Hibernate4实战视频课程讲师：高淇 73人学习过2016Shell高级编程实战第十四部-AWK数组国内讲师：老男孩 20人学习过
+
+
+
+文章排行
+本月本周24小时 
+
+多图详解Spring框架的设计理念与设计模
+29个非常实用的HTML 5实例、教程和技巧
+PHP对战Node.js：一场关于开发者喜好的
+Java数组声明、创建、初始化
+详解Java解析XML的四种方法
+现在就开始使用AngularJS的三个重要原
+游戏中的“战争黑雾”和现实中的程序员
+五个免费UML建模工具推荐
+25个超棒的jQuery日历和日期选取插件
+Visual C++ 2015引入更新的C++ 特性到W
+
+
+PHP对战Node.js：一场关于开发者喜好的
+关于大型网站技术演进的思考：存储的瓶
+我辞去了工作 住在帐篷中写代码
+【博文推荐】来自某CTO的演讲：对码农
+Java架构师与开发者提高效率的10个工具
+能让程序员心花怒放的七种礼物
+如何在发型不乱的前提下应对单日十亿计
+微信开放JS-SDK后 创业还需要开发App么
+优秀网站看前端：小米Note介绍页面代码
+软件项目将死的 27 个征兆
+
+
+近200篇机器学习&深度学习资料分享（含
+2015年薪酬大涨的15个IT岗位
+成为高级程序员的 10 个步骤
+程序员愤怒了：我们不仅要当管理者还要
+2015年1月编程语言排行榜：JavaScript
+参考淘宝团队实践：一个简单粗暴的前后
+2014年最热门的国人开发开源软件TOP100
+不要浪费时间去写所谓的完美代码
+PHP对战Node.js：一场关于开发者喜好的
+关于大型网站技术演进的思考：存储的瓶
+
+
+
+
+
+    /*300*250 创建于 2015-12-16文章页右侧热点职位上方*/
+    var cpro_id = "u2452183";
+
+
+
+
+
+热点职位
+更多>>
+ C++/QT工程师 全职/3-5年/大专15k-20k恒安讯佳 PHP开发工程师 全职/1-3年/大专5k-10k新浪网 PHP研发工程师 全职/1-3年/本科10k-15k动视云科技 web前段开发H5 全职/3-5年/大专7k-20k宜然网络科技 java开发工程师 全职/1-3年/大专6k-11k创立科技
+
+
+
+
+
+热点专题
+更多>>
+
+
+可视化技术 展现大数
+想要理解大数据，使之更贴近大多数人，最重要的手段的
+
+编程初学者学什么语言
+新手程序员关注编程趋势就好比股民时刻关心股价走向一
+
+聊一聊AngularJS在实
+AngularJS是很多Web开发人员在打造单页面应用程序时的
+
+
+
+
+
+
+热点标签
+
+编程语言排行榜 敏捷开发 Eclipse 3.6 PHP设计模式 NetBeans 7 Java7 Scala编程语言 Python编程世界 Ruby On Rails开发 LINQ ASP.NET视频教程 Visual Studio 智能手机 软件下载
+
+
+
+点击这里查看样刊
+
+
+ 
+
+
+
+
+
+
+
+全站热点
+
+
+
+
+
+最受管理员欢迎的顶级开源工具大盘点
+
+
+
+血拼双11 莫要购来商品丢了信息
+
+
+
+
+
+程序员MM的自白：磨人小妖精安卓碎片
+用CSS边框图像让你的网站更漂亮
+Wi-Fi联盟为低功耗Wi-Fi定名“Halow
+大型网站技术基石之 OpenStack
+飞塔防火墙曝SSH后门 官方回应并给出
+
+
+
+
+
+读书
+
+
+Oracle 10g应用指导与案例精讲
+本书作者结合自己多年实践经验，从Oracle开发应用中遇到的问题着手，全面系统地介绍Oracle的安装与卸载、数据字典、安全管理以及
+
+
+软件设计师考试考前冲刺预测卷及考点解析
+网络工程师考试考前冲刺预测卷及考点解析
+网管员必读—超级网管经验谈（第2版）
+Microsoft SQL Server 2005技术内幕：存储引擎
+
+
+
+
+
+博文推荐
+更多>>
+
+Citrix XenDesktop VS Vmware View (升级系统自带的perlIT项目管理之问题漏斗【毕业生的商业软件开发之路】初入职
+
+
+
+
+
+最新热帖
+更多>>
+
+一个 ACL列表中有多个条目， 怎么删【面试题】大智慧网站运维工程师面试2011届IT专业大学生专场！一次RAID0崩溃的思考打字
+
+
+
+
+
+
+
+
+
+
+
+    /*960*90 创建于 2015-11-05文章页 旗下网站上方通栏*/
+    var cpro_id = "u2386966";
+
+
+
+
+51CTO旗下网站
+
+领先的IT技术网站 51CTO
+领先的中文存储媒体 WatchStor
+中国首个CIO网站 CIOage
+中国首家数字医疗网站 HC3i
+
+
+Copyright2005-2016 51CTO.COM 版权所有 未经许可 请勿转载
+
+
+	$("#uyan_cmt_list").next().remove();	
+	$("#uyan_cmt_list").next().css("display","none");	
+
+
+.Nfloat { position: fixed; right: 2%; top: 35%; z-index: 801; }
+
+
+
+
+
+
+
+
+0
+
+
+
+
+
+
+
+
+
+
+ 
+	var thistid=190605; 
+	
+	//收藏按钮
+	var favor_url = 'http://developer.51cto.com/art/201003/190605.htm';  // 如：http://bbs.51cto.com/thread-789649-1.html
+	var favor_title = '用Python os.listdir判断相关路径是否为文件的方案';       //  
+	
+	//绑定复制按钮
+	copy('msnqqcopy', 'http://developer.51cto.com/art/201003/190605.htm', '分享到MSN/QQ的链接复制成功!');
+//	copy('bbscopy', '[url=http://developer.51cto.com/art/201003/190605.htm][u]用Python os.listdir判断相关路径是否为文件的方案[/u][/url]', '分享到论坛的UBB代码复制成功!');
+
+
+
+
+
+document.getElementById('books').innerHTML = document.getElementById("bookss").innerHTML; 

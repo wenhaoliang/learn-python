@@ -1,0 +1,64 @@
+a{text-decoration:none;}
+.red{color:#d40000;}
+.left{float:left;overflow:hidden;}
+.right{float:right;overflow:hidden;}
+.center{margin:0 auto;overflow:hidden;}
+.comment{width:635px;font-family:"Microsoft Yahei";}
+.comment .inner{width:615px;}
+.comment .title{height:39px;border-bottom:3px solid #bababa;overflow:hidden;}
+.comment .title .word{float:left;margin-left:8px;height:100%;font-size:24px;line-height:188%}
+.comment .title .con{float:left;margin-left:20px;height:100%;font-size:16px;line-height:217%}
+.comment .title .total{color:#ff3333;margin-left:6px;margin-right:6px;font-size:22px;height:100%;display:inline-block;line-height:220%}
+.comment .frame{width:613px;height:90px;border:1px solid #e5e5e5;margin-top:13px;}
+.comment .frame textarea{outline:none;float:left;width:98%;height:100%;border:none;font-size:14px;line-height:200%;padding:0px 3px 0px 10px;}
+.comment .user{height:112px;background:url(../images/user.png) left bottom no-repeat;}
+.comment .user .icon{float:left;width:46px;height:46px;margin-top:13px;overflow:hidden;}
+.comment .user dl{float:left;height:100%;width:390px;overflow:hidden;}
+.comment .user .icon img{float:left;width:100%;height:100%;}
+.comment .user dl dd{float:left;margin-left:10px;width:334px;overflow:hidden;}
+.comment .user .msg{font-size:14px;line-height:120%;margin-top:32px}
+.comment .user .name{display:inline-block;margin-right:5px;color:#225599;}
+.comment .user .btn{font-size:16px;margin-top:10px;line-height: 350%;}
+.comment .user .btn{color:#7c7c7c;}
+.comment .user .btn a{color:#000000;}
+.comment .user .submit{float:right;width:90px;height:40px;margin-top:13px;margin-right:2px;background-color:#be1c1a;font-size:16px;color:#ffffff;line-height:40px;text-align:center}
+.comment .user .submit:hover {text-decoration: none; background-color:#7F0200;}
+.submit{cursor:pointer}
+.comment .list{width:100%;}
+.comment .list .line{background:url(../images/line.png) left bottom repeat-x;}
+.comment .first dd{float:right;width:560px;}
+.comment .first .con{width:548px;}
+.comment .second dd{float:right;width:505px;}
+.comment .second .con{width:490px}
+.comment .list .element{width:100%;overflow:hidden;position:relative;top:0px;left:0px;}
+.comment .list .element dl{width:100%;overflow:hidden;}
+.comment .list .head{float:left;width:50px;height:50px;margin-top:14px;overflow:hidden;}
+.comment .list .head img{float:left;width:100%;height:100%;}
+.comment .list .name{font-size:14px;color:#225599;margin-top:12px;line-height:120%;}
+.comment .list .con{font-size:14px;color:#666666;line-height:24px;padding-top:8px;padding-bottom:10px}
+.comment .list .tool{width:100%;height:26px;font-size:14px;line-height:26px;padding-bottom: 10px;}
+.comment .list .date{float:left;width:50%;height:100%;color:#989898;}
+.comment .list .btn{float:right;width:50%;height:100%;position:relative;top:0px;left:0px;}
+.comment .list .btn .self{cursor:pointer;float:right;padding-left:22px;margin-right:10px;height:100%;color:#666666;background-image:url(../images/tool.png);background-repeat:no-repeat;}
+.comment .list .btn .self:hover{color:#225599;background-image:url(../images/tool_active.png)}
+.comment .list .btn .share{background-position:0px 7px;}
+.comment .list .btn .support{background-position:-52px 7px;}
+.comment .list .btn .reply{background-position:-109px 7px;}
+.comment .list .btn .shareBox{display:none;width:97px;height:35px;position:absolute;top:-34px;border:1px solid #e6e6e6;background-color:#ffffff;}
+
+.comment .list .btn .jiathis_style_24x24{float:left;width:100%;height:100%;overflow:hidden;cursor:pointer}
+.comment .list .btn .jiathis_style_24x24 a{float:left;width:26px;height:26px;overflow:hidden;margin-left:5px;margin-top:5px;cursor:pointer}
+.comment .list .btn .jiathis_style_24x24 img{float:left;width:100%;height:100%;cursor:pointer}
+
+.comment .first .shareBox{left:52px;}
+.comment .second .shareBox{left:26px}
+.comment .more{height:37px;width:100%;text-align:center;line-height:37px;}
+.comment .more a{font-size:14px;color:#3377bb;}
+
+.comment .sub_frame{width:100%;overflow:hidden;}
+.comment .sub_frame .core{width:558px;border:1px solid #cdcdcd;height:57px;overflow:hidden;float:right}
+.comment .sub_frame .core2{width:502px;border:1px solid #cdcdcd;height:57px;overflow:hidden;float:right}
+.comment .sub_frame textarea{float:left;width:100%;height:100%;overflow:hidden;border:none;outline:none;font-size:14px;line-height:180%;font-family:"Microsoft Yahei";}
+.comment .sub_frame .btn{width:100%;height:25px;margin-top:10px;margin-bottom:20px;}
+.comment .sub_frame .btn a{cursor:pointer;float:right;width:60px;height:30px;background-color:#cc0000;line-height:30px;text-align:center;color:#ffffff;text-decoration: none;font-size: 13px;}
+.comment .sub_frame .btn a:hover{ background-color: #7F0200; text-decoration:none;}

@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0048)http://developer.51cto.com/art/201003/190605.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<title>用Python os.listdir判断相关路径是否为文件的方案 - 51CTO.COM</title>
+<meta name="description" content="os.listdir 函数在实际相关应用中其功能是十分强大的，那么你是否想了解os.listdir 函数在Python中的具体应用的操作步骤。">
+<meta name="keywords" content="Python os.listdir ">
+<!--<base target="_blank">--><base href="." target="_blank">
+<link href="./1_files/grid.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="./1_files/art_master_top.css">
+<link href="./1_files/css3.css" rel="stylesheet" type="text/css">
+<script async="" src="./1_files/analytics.js"></script><script language="javaScript" src="./1_files/base_art.js"></script>
+<script src="./1_files/index_1_down.js"></script>
+<style type="text/css">
+.bds_tools a{ padding:0; margin:0;}
+.g_39.mb10:has(> #tonglanad){display:none;position:absolute;top:-1000000px;visibility:hidden}.banner_head > a[href*="_adid="]{display:none;position:absolute;top:-1000000px;visibility:hidden}#s3 + .g_39.mb10{display:none;position:absolute;top:-1000000px;visibility:hidden}[id^="ad_w_0"]{display:none;position:absolute;top:-1000000px;visibility:hidden}li[id^="ad_"]:not(.banner_head){display:none;position:absolute;top:-1000000px;visibility:hidden}p.ad,#js_ads_banner_top,.topad,.adbox,#tonglanad{display:none;position:absolute;top:-1000000px;visibility:hidden}</style>
+
+<script language="javascript" type="text/javascript" src="./1_files/35ff706fd57d11c141cdefcd58d6562b.js" charset="gb2312"></script><script type="text/javascript">
+hQGHuMEAyLn('.g_39.mb10:has(> #tonglanad)');
+hQGHuMEAyLn('#tonglanad,.adbox,.topad,li[id^="ad_"]:not(.banner_head),#js_ads_banner_top,[id^="ad_w_0"],#s3 + .g_39.mb10,p.ad,.banner_head > a[href*="_adid="]');</script><script async="" src="./1_files/core.php"></script><style type="text/css"></style><link href="./1_files/bdsstyle.css" rel="stylesheet" type="text/css"><script src="./1_files/logger.js"></script><link rel="stylesheet" type="text/css" href="./1_files/layout_51cto.css"></head>
+<body><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_renren rrw">人人网</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_douban db">豆瓣网</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_thx thx">和讯微博</a></li><li><a href="http://developer.51cto.com/art/201003/190605.htm#" class="bds_more">更多...</a></li></ul><p><a href="http://developer.51cto.com/art/201003/190605.htm#" class="goWebsite">百度分享</a></p></div></div></div>
+<!-- 导航 开始-->
+<div style="width: 100%; height: 1px; position: absolute; bottom: 0px; left: 0px; right: 0px;"></div><div id="pub_slot_Fri May 06 2016"><div style="visibility: hidden; opacity: 0;"><div><div><script charset="utf-8" src="./1_files/saved_resource"></script><div id="d3e1528ecb40edd9ff8a_143cca21da8d64ae96e5_1462499218b9f8f6cf9ecc_0" style="display: block; box-sizing: border-box; border: 0px; padding: 0px; margin: 0px; width: 300px; height: 250px; position: fixed; bottom: 0px; right: 0px; z-index: 2147483647; background-color: transparent;"><iframe style="width:300px;height:250px;background-color:transparent;" src="./1_files/Q5pPPb.html" seamless="" scrolling="no" frameborder="no" border="0" marginwidth="0" marginheight="0" allowtransparency="true"></iframe><img src="./1_files/Mapping.do" style="width: 1px; height: 1px; display: none;"><img src="./1_files/cm.gif" style="width: 1px; height: 1px; display: none;"><img src="./1_files/verify" style="width: 1px; height: 1px; display: none;"><a style="position: absolute; width: 20px; height: 20px; bottom: 0px; right: 18px; color: transparent; display: block; border: 0px; padding: 0px; margin: 0px; cursor: pointer; z-index: 100; background: url(&quot;http://static.chaoliangyun.com/ad_rt.png&quot;) no-repeat;"></a><div style="width: 20px; height: 20px; display: block; position: absolute; cursor: pointer; z-index: 100; bottom: 0px; right: 0px; background: url(&quot;http://static.chaoliangyun.com/cl_rt.png&quot;) no-repeat;"></div></div><script type="text/javascript" id="d3e1528ecb40edd9ff8a_143cca21da8d64ae96e5_1462499218b9f8f6cf9ecc">_guanggao_pub= "d3e1528ecb40edd9ff8a";_guanggao_slot= "143cca21da8d64ae96e5";</script><script type="text/javascript" src="./1_files/d3e1528ecb40edd9ff8a"></script></div></div></div></div><script id="allmobilize" charset="utf-8" src="./1_files/allmobilize.min.js"></script><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="http://developer.51cto.com/art/201003/190605.htm#">
+<div id="home_top">    <div class="top_nav">        <div class="left" style="width:400px"><div class="logo_51cto" title="51CTO.COM - 技术成就梦想 -  中国领先的IT技术网站"></div><a href="http://www.51cto.com/">首页</a><img width="16" height="25" align="absmiddle" src="./1_files/top_bg_xian.gif" style="padding-top: 2px;"><a onmouseover="show(1,this);" onmouseout="popupClose();" href="http://www.51cto.com/col/35/" target="_blank">技术频道<img align="absmiddle" src="./1_files/nav_ico1.gif" style="padding-left: 4px;"></a><img width="16" height="25" align="absmiddle" src="./1_files/top_bg_xian.gif"><a onmouseover="show(2,this);" onmouseout="popupClose();" href="http://www.51cto.com/" target="_blank">51CTO旗下网站<img align="absmiddle" src="./1_files/nav_ico1.gif" style="padding-left: 4px;"></a><img width="16" height="25" align="absmiddle" src="./1_files/top_bg_xian.gif"><a href="http://www.51cto.com/about/map.htm" target="_blank">地图</a> <a href="http://www.51cto.com/about/rss.html" target="_blank"><img src="./1_files/143749870.gif" style="vertical-align:middle; margin-bottom: 5px; margin-left:5px;"></a>       </div>        <div class="right">            <div class="more"><img width="27" height="16" align="absmiddle" src="./1_files/top_shequ.gif"><a href="http://gaozhao.51cto.com/" target="_blank" style="color:#CC0000">招聘</a><a href="http://edu.51cto.com/" target="_blank" style="color:#CC0000">学院</a><a href="http://down.51cto.com/" target="_blank">下载</a><a href="http://bbs.51cto.com/" target="_blank">论坛</a><a href="http://blog.51cto.com/" target="_blank">博客</a><a onmouseover="show(3,this)" onmouseout="popupClose()" href="javascript:viod(0);">更多<img align="absmiddle" src="./1_files/nav_ico1.gif" style="padding-left: 4px;"></a>            </div>            <span id="login_status"><div class="login" style="padding-top:8px; text-align:right;"><a href="http://home.51cto.com/index?reback=http://developer.51cto.com/art/201003/190605.htm" target="_self">登录</a><a href="http://ucenter.51cto.com/2015/register.php?reback=http://developer.51cto.com/art/201003/190605.htm" target="_self">注册</a></div></span>                </div>    </div></div>
+<div class="subMenu1" id="s1" onmouseover="popupNoClose();" onmouseout="popupClose();" style="display: none;">
+<ul>
+<li><a href="http://network.51cto.com/" target="_blank">网络</a></li>
+<li><a href="http://netsecurity.51cto.com/" target="_blank">安全</a></li>
+<li><a href="http://developer.51cto.com/" target="_blank">开发</a></li>
+<li><a href="http://database.51cto.com/" target="_blank">数据库</a></li>
+<li><a href="http://server.51cto.com/" target="_blank">服务器</a></li>
+<li><a href="http://os.51cto.com/" target="_blank">系统</a></li>
+<li><a href="http://virtual.51cto.com/" target="_blank">虚拟化</a></li>
+<li><a href="http://cloud.51cto.com/" target="_blank">云计算</a></li>
+<li><a href="http://developer.51cto.com/embed/" target="_blank">嵌入式</a></li>
+<li><a href="http://mobile.51cto.com/" target="_blank">移动开发</a></li>
+</ul>
+</div> 
+<div class="subMenu2" id="s2" onmouseover="popupNoClose()" onmouseout="popupClose()" style="display: none; top: 29px; left: 402px;">
+<ul>
+<li><a href="http://www.51cto.com/" target="_blank" title="中国领先的IT技术网站">51CTO.COM</a></li>
+<li><a href="http://www.cioage.com/" target="_blank" title="中国首个专门服务于CIO的专业网站">CIOage.com</a></li>
+<li><a href="http://www.watchstor.com/" target="_blank" title="领先的中文存储网络媒体">WatchStor.com</a></li>
+<li><a href="http://www.hc3i.cn/" target="_blank" title="中国首家专注于数字医疗及医疗信息化的专业网站">HC3i.cn</a></li>
+</ul>
+</div>
+<script src="./1_files/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+	$(".bann").height(265);	 
+	$(".bann").css("background-color","white");
+	$(".hot").css("top","450px");
+	//$(".fixfloat").css("height","640px");
+	$(".g_13").find(".focus").css("height","640px");
+});
+var edunum=2;
+$(function(){
+	$("#change").click(function(){
+		$("#edu > ul").css("display","none");
+		var eduid='edu'+edunum;
+		$("#" + eduid).css("display","block");	
+		if(edunum<4){
+			edunum++;	
+		}else{
+			edunum=1;	
+		}							
+	});  
+});
+</script>
+
+<script src="./1_files/head_art_more1.js"></script><div class="subMenu3" id="s3" onmouseover="popupNoClose()" onmouseout="popupClose()" style="z-index: 9999; position: absolute; display: none;">
+<ul>
+<li><a href="http://home.51cto.com/" target="_blank">家园</a></li>
+<li><a href="http://gaozhao.51cto.com/" target="_blank" style="color:red;">招聘</a></li>
+<li><a href="http://edu.51cto.com/" target="_blank">学院</a></li>
+<li><a href="http://blog.51cto.com/" target="_blank">博客</a></li>
+<li><a href="http://bbs.51cto.com/" target="_blank">论坛</a></li>
+<li><a href="http://down.51cto.com/" target="_blank">下载</a></li>
+<li><a href="http://selftest.51cto.com/" target="_blank">自测</a></li>
+<li><a href="http://doctor.51cto.com/" target="_blank">门诊</a></li>
+<li><a href="http://blog.51cto.com/newsletter/" target="_blank">周刊</a></li>
+<li><a href="http://book.51cto.com/" target="_blank">读书</a></li>
+<li><a href="http://t.51cto.com/" target="_blank" style="color:red;">题库</a></li>
+</ul>
+</div>
+
+<!-- 登陆信息 -->
+<!-- 导航 结束--> 
+ <div class="g_39 mb10">
+	<div id="tonglanad" class="fl"><script language="JavaScript" src="./1_files/ad.js"></script></div>
+	<div id="list4" class="fr">
+		<ul>
+			<li id="wordlinkad1"></li>
+			<li id="wordlinkad2"></li>
+			<li id="wordlinkad3"></li>
+			<li id="wordlinkad4"></li>
+		</ul>
+	</div>
+<br class="dle">
+</div>
+
+<div class="g_39 menu">
+<div class="subNav_logo"><img src="./1_files/kaifa_logo.gif"></div>
+<div class="subNav_l"><a href="http://developer.51cto.com/">首页</a> | <a href="http://developer.51cto.com/java/">Java</a> | <a href="http://developer.51cto.com/net/">.NET</a> | <a href="http://developer.51cto.com/web/">Web</a> | <a href="http://developer.51cto.com/col/585/">语言工具</a> | <a href="http://developer.51cto.com/col/1312/">测试</a> | <a href="http://developer.51cto.com/col/583/" target="_blank">移动</a> | <a href="http://developer.51cto.com/col/1308/">架构</a> | <a href="http://developer.51cto.com/col/586/">项目管理</a> | <a href="http://developer.51cto.com/col/577/">大数据</a> | <a href="http://publish.51cto.com/list/460/">全部文章</a></div>
+  
+<div class="search fr">
+<dl>
+<form name="searchform" action="http://www.51cto.com/php/search.php" target="_blank" method="post" style="margin:0px; padding:0px;">
+<dt class="fl"><input name="keyword" type="text" class="searchInput f14 input" value="请输入关键字" onfocus="doempty(this, &#39;请输入关键字&#39;);" onblur="doempty(this, &#39;请输入关键字&#39;);"></dt>
+<dd class="fl"><input type="image" src="./1_files/search.gif"></dd></form>
+</dl>
+</div>
+<br class="dle">
+</div>
+<div class="g_39 b3-s-4273B3 rel">
+<!--width : 26*25 - 15 = 635px-->
+<div class="g_26 fl m_l">
+<div class="brief bgF8F8F8">
+<p class="crumb ">您所在的位置：<a href="http://developer.51cto.com/">开发</a> &gt; <a href="http://developer.51cto.com/web/">Web</a> &gt; <a href="http://developer.51cto.com/col/1455/">Python</a> &gt;  <b>用Python os.listdir判断相关路径是否为文件的方案</b> </p>
+<h1>用Python os.listdir判断相关路径是否为文件的方案</h1>
+<div class="msg">
+<div>2010-03-24 09:29  佚名  博客园  字号：<span class="f14-b"><a href="javascript:setfont(12);" target="_self">T</a></span> | <span class="f16-b"><a href="javascript:setfont(16);" target="_self">T</a></span></div>
+<div class="artHd" id="books" style="padding:5px 25px;display:none;"><script language="JavaScript" src="./1_files/getBookData.php"></script></div>
+<div class="fav"><a href="javascript:favorBox(&#39;open&#39;);" title="一键收藏，随时查看，分享好友！" target="_self"><img src="./1_files/Fav.gif" alt="一键收藏，随时查看，分享好友！" border="0"></a></div>
+</div>
+<div class="brieftext">
+<p class="f14 green">os.listdir 函数在实际相关应用中其功能是十分强大的，那么你是否想了解os.listdir 函数在Python中的具体应用的操作步骤。</p>
+<p class="ad">AD：<script src="./1_files/keywords_ad_new.js"></script><a href="http://mobile.51cto.com/mobile/mdsa11/" target="_blank" style="text-decoration: none;color:red">网+线下沙龙 | 移动APP模式创新：给你一个做APP的理由&gt;&gt;</a>
+</p>
+</div>
+<!--  <div style="border-left:5px solid #4065aa;height:25px; line-height:25px;margin-top:10px;background:#eef7ff;padding-left:10px;">
+<a style="text-decoration: none;color:red" target="_blank" href="http://server.51cto.com/exp/OpenPower/">IBM POWER8通过一年充分融入了“开放”基因，现在有哪些成效？快来注册观看直播，一起拥抱开源的力量。</a>
+</div> -->
+
+
+
+</div>
+<div class="tag bgF8F8F8" id="indexlist" style="display:none;">
+<ul id="indexliststr">
+</ul>
+<br class="dle">
+</div>
+<div class="content bgF8F8F8 f14">
+<div id="content">
+<p></p><p>在Python os.listdir 中我们可以列出关于dir 里面的所有的相关文件与目录的具体操作方案的介绍，以及我们在实际如何用Python中的os.path.isfile()函数来判断相关路径是否为文件的操作方案，以下是文章的具体介绍。</p>
+<p>Python判断是否为文件在Python os.listdir 函数判断某一路径是否为文件。其函数原型如下所示。</p>
+<p></p>
+<pre><ol class="dp-xml"><li class="alt"><span><span>os.path.isfile(path)&nbsp;</span></span></li></ol></pre>
+<p>其参数含义如下。path：要进行判断的路径。以下实例判断E:\book\temp是否为文件。</p>
+<p></p>
+<pre><ol class="dp-xml"><li class="alt"><span><span class="tag">&gt;</span><span class="tag">&gt;</span><span class="tag">&gt;</span><span>&nbsp;import&nbsp;os &nbsp;</span></span></li><li><span class="tag">&gt;</span><span class="tag">&gt;</span><span class="tag">&gt;</span><span>&nbsp;os.path.isfile('E:\\book\\temp')&nbsp; &nbsp;</span></li></ol></pre>
+<p>判断是否为文件</p>
+<pre><ol class="dp-xml"><li class="alt"><span><span>False&nbsp;&nbsp;</span></span></li></ol></pre>
+<p>表示E:\book\temp不是文件列出目录中所有文件的方法</p>
+<p>关键字:</p>
+<pre><ol class="dp-xml"><li class="alt"><span><span>dirimport&nbsp;string,&nbsp;os,&nbsp;sys &nbsp;</span></span></li><li><span class="attribute">dir</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">'/var'</span><span>&nbsp;</span></li><li class="alt"><span>print&nbsp;'-----------&nbsp;no&nbsp;sub&nbsp;dir' &nbsp;</span></li><li><span class="attribute">files</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">os</span><span>.listdir(dir) &nbsp;</span></li><li class="alt"><span>for&nbsp;f&nbsp;in&nbsp;files: &nbsp;</span></li><li><span>print&nbsp;dir&nbsp;+&nbsp;os.sep&nbsp;+&nbsp;f &nbsp;</span></li><li class="alt"><span>print&nbsp;'-----------&nbsp;all&nbsp;dir' &nbsp;</span></li><li><span>for&nbsp;root,&nbsp;dirs,&nbsp;files&nbsp;in&nbsp;os.walk(dir): &nbsp;</span></li><li class="alt"><span>for&nbsp;name&nbsp;in&nbsp;files: &nbsp;</span></li><li><span>print&nbsp;os.path.join(root,&nbsp;name) &nbsp;</span><span>&nbsp;</span></li></ol></pre>
+<p></p>
+<p>前面的Python os.listdir 可以列出 dir 里面的所有文件和目录，但不包括子目录中的内容。os.walk 可以遍历下面的所有目录，包括子目录。<br>
+&nbsp;</p>
+<p>【编辑推荐】</p>
+<ol>
+    <li><a href="http://developer.51cto.com/art/201003/190545.htm" target="_blank">用Python操作文件如何查看目录内容的具体方法</a></li>
+    <li><a href="http://developer.51cto.com/art/201003/190551.htm" target="_blank">Python文件的详细信息的相关介绍与具体分析</a></li>
+    <li><a href="http://developer.51cto.com/art/201003/190557.htm" target="_blank">Python文件复制中如何复制相关文件的实际操作</a></li>
+    <li><a href="http://developer.51cto.com/art/201003/190561.htm" target="_blank">用Python分解路径名的典型例子解说其实际操作</a></li>
+    <li><a href="http://developer.51cto.com/art/201003/190566.htm" target="_blank">Python目录的创建与移动以其典型例子进行解析</a></li>
+</ol><div align="right">【责任编辑：<a class="ln" href="mailto:liusn@51cto.com">孙巧华</a> TEL：（010）68476606】</div><br> 
+<p class="blank10"></p> 
+ 
+ 
+
+
+<div class="f12"> <span class="fl">原文：<a href="http://developer.51cto.com/art/201003/190605.htm" class="blue"><b>用Python os.listdir判断相关路径是否为文件的方案</b></a></span> <span class="fr"><a href="http://developer.51cto.com/">返回开发首页</a></span> </div>
+<p class="blank1"></p>
+</div>
+<hr style="border-top: #555555 1px solid; height: 1px; border-right: medium none; border-bottom: medium none; border-left: medium none">
+<div style="width: 600px; background: #ffffff"><img width="600" height="140" alt="" src="./1_files/wKioL1ZOwrbDjDqxAABJOr5GFjU021.png" border="0"></div>
+<hr style="border-top: #555555 1px solid; height: 1px; border-right: medium none; border-bottom: medium none; border-left: medium none">
+<iframe width="600" height="239" src="./1_files/bulkfollow.html" frameborder="0" scrolling="no"></iframe>
+<div class="tips">
+<div style="float:left;">
+<span style="float:left; margin-top:4px;">分享到：</span>
+<!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="margin-right:5px; float:left;">
+        <a class="bds_qzone" title="分享到QQ空间" href="http://developer.51cto.com/art/201003/190605.htm#"></a>
+        <a class="bds_tsina" title="分享到新浪微博" href="http://developer.51cto.com/art/201003/190605.htm#"></a>
+        <a class="bds_tqq" title="分享到腾讯微博" href="http://developer.51cto.com/art/201003/190605.htm#"></a>
+        <a class="bds_renren" title="分享到人人网" href="http://developer.51cto.com/art/201003/190605.htm#"></a>
+        <a class="bds_t163" title="分享到网易微博" href="http://developer.51cto.com/art/201003/190605.htm#"></a>
+        <span class="bds_more"></span>
+		<a class="shareCount" href="http://developer.51cto.com/art/201003/190605.htm#" title="累计分享1次">1</a>
+
+</div>
+<!--<div class="fl"> 
+    </div>
+--><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=585532" src="./1_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+	var bds_config = {'snsKey':{'tsina':'2378297317'}};
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+
+
+
+</div><div class="fr blue"><a href="javascript:AddFavorite(document.location.href,document.title);" target="_self">收藏</a>|<a href="javascript:window.print();" target="_self">打印</a>|<a id="msnqqcopy" title="分享本资源给好友" target="_self">复制</a></div>
+</div>
+</div>
+<!--内容 end-->
+<p class="blank10"></p>
+<div class="comment center">
+	<div class="inner center" id="cmscmt_iframe"><div class="title"><span class="word">内容点评</span><p class="con">已有<span class="total" id="cmt_num">0</span>条评论,<span class="total" id="zan_num">0</span>次赞</p><p style="float:right; margin-top: 17px;">还可以输入<span id="uyan_tts">500</span>字</p></div><div class="frame center"><textarea value="" id="comment" onblur="window.CMSCMT.shoIntro(this);" onfocus="window.CMSCMT.hidIntro(this);" onkeydown="window.CMSCMT.checkTxt(this, 140);" onkeyup="window.CMSCMT.checkTxt(this, 140);" style="color:#7c7c7c; font-family:Microsoft Yahei;">请输入你的评论</textarea></div><div class="user"><a id="uyan_cmt_btn" onclick="window.CMSCMT.addCmt(this);" class="submit">提交</a><dl><dt class="icon"><img src="./1_files/duface.png" alt=""></dt><dd class="btn"><span>您还没有登录！</span><span class="note">请先</span>&nbsp;<a href="http://home.51cto.com/index.php?s=/Index/index/reback/http%253A%252F%252Fdeveloper.51cto.com%252Fart%252F201003%252F190605.htm" style="color:red;">登录</a>&nbsp;<span class="note">或</span>&nbsp;<a href="http://ucenter.51cto.com/reg_01.php?reback=http%253A%252F%252Fdeveloper.51cto.com%252Fart%252F201003%252F190605.htm" style="color:red;">注册</a>&nbsp;</dd></dl></div><ul class="list center first" id="uyan_cmt_list"><div style="margin-top: 10px; padding-top: 10px; font-size: 12px; color: #303030; text-align: center;" id="uyan_cmt_list_warn">还没有评论内容</div></ul></div>
+</div>
+<script type="text/javascript" id="UYScript" src="./1_files/iframe_cmt.js" async=""></script>
+
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg pl15">关于<a href="http://www.51cto.com/php/search.php?keyword=Python%20os.listdir%20" target="_blank" class="underline">Python os.listdir </a>的更多文章</div>
+<div class="reltag">
+<ul class="fl list02">
+  <li><a href="http://developer.51cto.com/art/201003/190605.htm" title="用Python os.listdir判断相关路径是否为文件的方案">用Python os.listdir判断相关路径是否为文</a></li>
+</ul>
+<div class="fr">
+<div class="h5 f12"><a href="http://developer.51cto.com/art/200509/3940.htm" title="Python实用开发指南"><b>Python实用开发指南</b></a></div>
+<a href="http://developer.51cto.com/art/200509/3940.htm" title="Python实用开发指南"><img src="./1_files/115229482.jpg" alt="Python实用开发指南" width="100" height="80" border="0"></a>
+<p class="c666">Python是一种即译式的，互动的，面向对象的编程语言，它包含了模<a class="blue" href="http://developer.51cto.com/art/200509/3940.htm" title="Python实用开发指南">[详细]</a></p>
+</div>
+</div>
+<!--reltag end-->
+</div>
+<p class="blank10"></p>
+<div class="bor" style="width:633px;height:90px;">
+<script type="text/javascript">
+    /*633*90 创建于 2015-11-05文章页广告（评论下方）*/
+    var cpro_id = "u2386935";
+</script>
+<script src="./1_files/c.js" type="text/javascript"></script>
+</div>
+<!--box end-->
+<p class="blank10"></p>
+<div class="relart fl bor">
+<div class="titbg">
+<h3 class="fl t1">栏目热门</h3>
+<a href="http://developer.51cto.com/click/1455" class="tmore">更多&gt;&gt;</a></div>
+<ul>
+  
+	  <li><a href="http://developer.51cto.com/art/201407/446192.htm" title="聊聊Python用rpc实现分布式系统调用的那些事">聊聊Python用rpc实现分布式系统调用的那些</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201511/497127.htm" title="Python开发指南：最佳实践精选">Python开发指南：最佳实践精选</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201511/497128.htm" title="Python语言中计数方法的演变">Python语言中计数方法的演变</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201411/458344.htm" title="Python 2.7.x 和 3.x 版本的重要区别">Python 2.7.x 和 3.x 版本的重要区别</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201412/458572.htm" title="提供给开发者 10 款最好的 Python IDE">提供给开发者 10 款最好的 Python IDE</a></li>
+	  
+</ul>
+</div>
+<div class="cathot fr bor">
+<div class="titbg">
+<h3 class="fl t1">同期最新</h3>
+<a href="http://developer.51cto.com/col/1455" class="tmore">更多&gt;&gt;</a></div>
+<ul>
+	
+	  <li><a href="http://developer.51cto.com/art/201003/190600.htm" title="在Python编程语言中使用os.path.isdir()函数操作介绍">在Python编程语言中使用os.path.isdir()函</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201003/190592.htm" title="Python编程语言获的目录内容及创建目录的方案介绍">Python编程语言获的目录内容及创建目录的方</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201003/190583.htm" title="Python os.mkdir()函数创建目录的实际操作方案">Python os.mkdir()函数创建目录的实际操作</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201003/190580.htm" title="Python os.getcwd()函数的实际应用方案介绍">Python os.getcwd()函数的实际应用方案介绍</a></li>
+	  
+	  <li><a href="http://developer.51cto.com/art/201003/190577.htm" title="Python递归文件中os模块的实际相关应用方案简介">Python递归文件中os模块的实际相关应用方案</a></li>
+	  
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="fl t1"><a href="http://developer.51cto.com/">开发</a></h3>
+<span class="pl10">频道导航</span></div>
+ <ul class="xtlist">
+<li><span class="tit">Java</span>
+<div><a href="http://developer.51cto.com/java/">Java开发</a>|<a href="http://developer.51cto.com/col/1005/">Java基础</a>|<a href="http://developer.51cto.com/col/1014/">Java EE开发</a>|<a href="http://developer.51cto.com/col/1004/">Java框架</a>|<a href="http://developer.51cto.com/col/1007/">设计模式</a></div>
+</li>
+<li><span class="tit">WEB开发</span>
+<div><a href="http://developer.51cto.com/col/1441/">PHP开发</a>|<a href="http://developer.51cto.com/col/1455/">Python</a>|<a href="http://developer.51cto.com/col/1552/">Ruby</a>|<a href="http://developer.51cto.com/col/1552/">JSP</a>|<a href="http://developer.51cto.com/art/200907/133407.htm">HTML 5</a>|<a href="http://developer.51cto.com/col/1450/">DIV+CSS</a></div>
+</li>
+<li class="last"><span class="tit">综合</span>
+<div><a href="http://developer.51cto.com/net/">.NET开发</a>|<a href="http://developer.51cto.com/embed/">嵌入式开发</a>|<a href="http://developer.51cto.com/col/586/">项目管理</a>|<a href="http://developer.51cto.com/col/1308/">架构设计</a></div>
+</li>
+</ul> 
+</div> 
+<p class="blank10"></p>
+<p class="blank10"></p>
+<div class="leftbotcon">
+<div class="bor jdlist">
+<div class="titbg">
+<h3 class="t2">热点推荐</h3></div>
+<ul>
+<li><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://mobile.51cto.com/mobile-182392.htm"><img src="./1_files/153546162.jpg"></a> 
+<div class="name"><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://mobile.51cto.com/mobile-182392.htm">Android开发应用详解</a></div></li>
+<li><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://developer.51cto.com/art/201106/266369.htm"><img src="./1_files/133620622.jpg"></a> 
+<div class="name"><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://developer.51cto.com/art/201106/266369.htm">那些性感的让人尖叫的程序员</a></div></li>
+<li><a href="http://developer.51cto.com/art/200907/133407.htm"><img src="./1_files/134217922.jpg"></a> 
+<div class="name"><a href="http://developer.51cto.com/art/200907/133407.htm">HTML5 下一代Web开发标准详解</a></div></li>
+<li><a href="http://developer.51cto.com/art/201104/257581.htm"><img src="./1_files/123123954.jpg"></a> 
+<div class="name"><a href="http://developer.51cto.com/art/201104/257581.htm">高性能WEB开发应用指南</a></div></li>
+<li><a href="http://os.51cto.com/art/200706/49181.htm"><img src="./1_files/195816929.jpg"></a> 
+<div class="name"><a href="http://os.51cto.com/art/200706/49181.htm">Ubuntu开源技术交流频道</a></div></li></ul></div>
+<p class="blank10"></p>
+<div class="bor hotTag"><strong>热门标签：</strong> <a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-2]);" href="http://os.51cto.com/windows/">windows频道</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://mobile.51cto.com/">移动开发</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://cloud.51cto.com/">云计算</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://mobile.51cto.com/mobile/objc/">objective-c</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://network.51cto.com/art/200909/151122.htm">tp-link路由器设置图解</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://developer.51cto.com/art/200907/133407.htm">html5</a> </div></div>
+<div class="leftbotbox"> </div>
+</div>
+<!--left end-->
+<div class="g_13 fr">
+<div class="focus fixfloat" style="height: 640px;"> 
+ <img width="298" style="border: 1px solid #CCCCCC; margin:5px 0px 5px;" src="./1_files/weixin.jpg"><div class="hot" style="top: 450px;">
+<ul>
+<li class="tit"><em>热点</em> <a href="http://developer.51cto.com/art/201604/510424.htm"> 技术红颜告诉你大数据分析的真谛</a> </li>
+<li class="con"><dl><dt><a href="http://developer.51cto.com/art/201604/510424.htm"><img border="0" src="./1_files/wKioL1cocmTidTUYAAAN0Utd2KI115.jpg"></a></dt>
+<dd>大数据时代已经到来，每个企业都开始忙着数据挖掘，忙着数据分析，忙着构建各种算法模型。但为什么你无法引发“技术红颜”式的蝴蝶效应?为什么你眼中对用户的“精准推荐”，成了Ta备感厌烦的“精准骚扰”</dd>
+</dl></li></ul><ol class="hotlist"><li><a href="http://developer.51cto.com/art/201605/510460.htm">看待Docker 和 PaaS的正确视角</a></li><li><a href="http://developer.51cto.com/art/201604/509939.htm">基于Docker和Mesos的服务可靠性保障实践</a></li></ol></div>
+<p>
+<script language="JavaScript" src="./1_files/ad(1).js" type="text/javascript"></script>
+</p>
+</div>
+<div class="bor vlist" style="width:305px;height:250px;padding-left:5px;">
+<script type="text/javascript">
+    /*300*250 创建于 2015-12-16文章页右侧视频课程上方*/
+    var cpro_id = "u2452179";
+</script>
+<script src="./1_files/c.js" type="text/javascript"></script>
+</div>
+<div class="bor vlist" id="edu">
+	<div class="titbg">
+    <h3 class="fl t1"><a href="http://edu.51cto.com/" target="_blank">视频课程</a></h3>
+    <a class="tmore" id="change" style="cursor:pointer">换一换</a>
+    </div>
+    
+    	<ul class="plist01" id="edu1"><li><a class="ico" href="http://edu.51cto.com/course/course_id-5317.html" target="_blank"></a><a href="http://edu.51cto.com/course/course_id-5317.html" target="_blank"><img title="2.17.从三星官方内核开始移植-uboot与系统移植第17部分视频课程" alt="2.17.从三星官方内核开始移植-uboot与系统移植第17部分视频课程" src="./1_files/56b123f81ed314040e20328657b519dfdf5d37.jpg" height="80" width="100"></a><h5><a title="2.17.从三星官方内核开始移植-uboot与系统移植第17部分视频课程" href="http://edu.51cto.com/course/course_id-5317.html" target="_blank">2.17.从三星官方内核开始移植-uboot与系统移</a></h5><div class="c666"><p>讲师：<a href="http://edu.51cto.com/lecturer/user_id-9584512.html" target="_blank">朱有鹏</a></p><p> 26人学习过</p></div></li><li><a class="ico" href="http://edu.51cto.com/course/course_id-5315.html" target="_blank"></a><a href="http://edu.51cto.com/course/course_id-5315.html" target="_blank"><img title="数据可视化-Excel 自助式商业智能Power BI实战入门视频课程" alt="数据可视化-Excel 自助式商业智能Power BI实战入门视频课程" src="./1_files/09537504858f401d5af92635d9e5781632f62b.jpg" height="80" width="100"></a><h5><a title="数据可视化-Excel 自助式商业智能Power BI实战入门视频课程" href="http://edu.51cto.com/course/course_id-5315.html" target="_blank">数据可视化-Excel 自助式商业智能Power BI实</a></h5><div class="c666"><p>讲师：<a href="http://edu.51cto.com/lecturer/user_id-10193812.html" target="_blank">宋立桓</a></p><p> 14人学习过</p></div></li><li><a class="ico" href="http://edu.51cto.com/course/course_id-5314.html" target="_blank"></a><a href="http://edu.51cto.com/course/course_id-5314.html" target="_blank"><img title="团队项目管理工具：Maven3入门实战视频课程" alt="团队项目管理工具：Maven3入门实战视频课程" src="./1_files/85a6e8131fb1ed2c02f2005f2ac62af9fe94a5.PNG" height="80" width="100"></a><h5><a title="团队项目管理工具：Maven3入门实战视频课程" href="http://edu.51cto.com/course/course_id-5314.html" target="_blank">团队项目管理工具：Maven3入门实战视频课程</a></h5><div class="c666"><p>讲师：<a href="http://edu.51cto.com/lecturer/user_id-10053053.html" target="_blank">肖海鹏</a></p><p> 34人学习过</p></div></li></ul><ul class="plist01" id="edu2" style="display:none"><li><a class="ico" href="http://edu.51cto.com/course/course_id-5313.html" target="_blank"></a><a href="http://edu.51cto.com/course/course_id-5313.html" target="_blank"><img title="爱享读书《团队协作的五大障碍》视频课程" alt="爱享读书《团队协作的五大障碍》视频课程" src="./1_files/0581afd037567feed52996beef9ec756f5b98a.jpg" height="80" width="100"></a><h5><a title="爱享读书《团队协作的五大障碍》视频课程" href="http://edu.51cto.com/course/course_id-5313.html" target="_blank">爱享读书《团队协作的五大障碍》视频课程</a></h5><div class="c666"><p>讲师：<a href="http://edu.51cto.com/lecturer/user_id-10822498.html" target="_blank">何勇</a></p><p> 9人学习过</p></div></li><li><a class="ico" href="http://edu.51cto.com/course/course_id-5311.html" target="_blank"></a><a href="http://edu.51cto.com/course/course_id-5311.html" target="_blank"><img title="Dede织梦仿站建站：仿“汉后阿胶”网 解决防伪码授权码问题" alt="Dede织梦仿站建站：仿“汉后阿胶”网 解决防伪码授权码问题" src="./1_files/82ecdec27e7ef9316d93951460b8b0092246db.jpg" height="80" width="100"></a><h5><a title="Dede织梦仿站建站：仿“汉后阿胶”网 解决防伪码授权码问题" href="http://edu.51cto.com/course/course_id-5311.html" target="_blank">Dede织梦仿站建站：仿“汉后阿胶”网 解决防</a></h5><div class="c666"><p>讲师：<a href="http://edu.51cto.com/lecturer/user_id-10863457.html" target="_blank">童攀</a></p><p> 16人学习过</p></div></li><li><a class="ico" href="http://edu.51cto.com/course/course_id-5309.html" target="_blank"></a><a href="http://edu.51cto.com/course/course_id-5309.html" target="_blank"><img title="蓝鸥Unity开发视频教程之C＃语言入门" alt="蓝鸥Unity开发视频教程之C＃语言入门" src="./1_files/d433c1233604439549d9838d78771de81e0fc3.jpg" height="80" width="100"></a><h5><a title="蓝鸥Unity开发视频教程之C＃语言入门" href="http://edu.51cto.com/course/course_id-5309.html" target="_blank">蓝鸥Unity开发视频教程之C＃语言入门</a></h5><div class="c666"><p>讲师：<a href="http://edu.51cto.com/lecturer/user_id-11155165.html" target="_blank">宋博</a></p><p> 11人学习过</p></div></li></ul><ul class="plist01" id="edu3" style="display:none"><li><a class="ico" href="http://edu.51cto.com/course/course_id-5308.html" target="_blank"></a><a href="http://edu.51cto.com/course/course_id-5308.html" target="_blank"><img title="Hibernate4实战视频课程" alt="Hibernate4实战视频课程" src="./1_files/f97c73380332c59e369280e4daeafe147d2224.jpg" height="80" width="100"></a><h5><a title="Hibernate4实战视频课程" href="http://edu.51cto.com/course/course_id-5308.html" target="_blank">Hibernate4实战视频课程</a></h5><div class="c666"><p>讲师：<a href="http://edu.51cto.com/lecturer/user_id-545509.html" target="_blank">高淇</a></p><p> 73人学习过</p></div></li><li><a class="ico" href="http://edu.51cto.com/course/course_id-5307.html" target="_blank"></a><a href="http://edu.51cto.com/course/course_id-5307.html" target="_blank"><img title="2016Shell高级编程实战第十四部-AWK数组国内企业案例视频课程" alt="2016Shell高级编程实战第十四部-AWK数组国内企业案例视频课程" src="./1_files/b9fbc1174cb89e69956893464e8bc32afc73cb.png" height="80" width="100"></a><h5><a title="2016Shell高级编程实战第十四部-AWK数组国内企业案例视频课程" href="http://edu.51cto.com/course/course_id-5307.html" target="_blank">2016Shell高级编程实战第十四部-AWK数组国内</a></h5><div class="c666"><p>讲师：<a href="http://edu.51cto.com/lecturer/user_id-2561410.html" target="_blank">老男孩</a></p><p> 20人学习过</p></div></li></ul>
+	
+</div>
+<div class="rank">
+<div class="tlt">
+      <h3>文章排行</h3>
+      <a onmouseover="change_top10(3);" id="top_3">本月</a><a onmouseover="change_top10(2);" id="top_2">本周</a><a onmouseover="change_top10(1);" class="myon" id="top_1">24小时</a> </div>
+ <div id="top10_1" style="display: block;" class="list"><ul>
+<li><a href="http://developer.51cto.com/art/201006/205212.htm" target="_blank" title="多图详解Spring框架的设计理念与设计模">多图详解Spring框架的设计理念与设计模</a>
+</li><li><a href="http://developer.51cto.com/art/201107/274075.htm" target="_blank" title="29个非常实用的HTML 5实例、教程和技巧">29个非常实用的HTML 5实例、教程和技巧</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464543.htm" target="_blank" title="PHP对战Node.js：一场关于开发者喜好的">PHP对战Node.js：一场关于开发者喜好的</a>
+</li><li><a href="http://developer.51cto.com/art/200906/128274.htm" target="_blank" title="Java数组声明、创建、初始化">Java数组声明、创建、初始化</a>
+</li><li><a href="http://developer.51cto.com/art/200903/117512.htm" target="_blank" title="详解Java解析XML的四种方法">详解Java解析XML的四种方法</a>
+</li><li><a href="http://developer.51cto.com/art/201302/380661.htm" target="_blank" title="现在就开始使用AngularJS的三个重要原">现在就开始使用AngularJS的三个重要原</a>
+</li><li><a href="http://developer.51cto.com/art/201502/464853.htm" target="_blank" title="游戏中的“战争黑雾”和现实中的程序员">游戏中的“战争黑雾”和现实中的程序员</a>
+</li><li><a href="http://developer.51cto.com/art/200908/146071.htm" target="_blank" title="五个免费UML建模工具推荐">五个免费UML建模工具推荐</a>
+</li><li><a href="http://developer.51cto.com/art/201103/248670.htm" target="_blank" title="25个超棒的jQuery日历和日期选取插件">25个超棒的jQuery日历和日期选取插件</a>
+</li><li><a href="http://developer.51cto.com/art/201502/464832.htm" target="_blank" title="Visual C++ 2015引入更新的C++ 特性到W">Visual C++ 2015引入更新的C++ 特性到W</a>
+</li></ul></div>
+<div id="top10_2" style="display: none;" class="list"><ul>
+<li><a href="http://developer.51cto.com/art/201501/464543.htm" target="_blank" title="PHP对战Node.js：一场关于开发者喜好的">PHP对战Node.js：一场关于开发者喜好的</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464238.htm" target="_blank" title="关于大型网站技术演进的思考：存储的瓶">关于大型网站技术演进的思考：存储的瓶</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464538.htm" target="_blank" title="我辞去了工作 住在帐篷中写代码">我辞去了工作 住在帐篷中写代码</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464391.htm" target="_blank" title="【博文推荐】来自某CTO的演讲：对码农">【博文推荐】来自某CTO的演讲：对码农</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464539.htm" target="_blank" title="Java架构师与开发者提高效率的10个工具">Java架构师与开发者提高效率的10个工具</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464382.htm" target="_blank" title="能让程序员心花怒放的七种礼物">能让程序员心花怒放的七种礼物</a>
+</li><li><a href="http://developer.51cto.com/art/201502/464640.htm" target="_blank" title="如何在发型不乱的前提下应对单日十亿计">如何在发型不乱的前提下应对单日十亿计</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464537.htm" target="_blank" title="微信开放JS-SDK后 创业还需要开发App么">微信开放JS-SDK后 创业还需要开发App么</a>
+</li><li><a href="http://developer.51cto.com/art/201502/464638.htm" target="_blank" title="优秀网站看前端：小米Note介绍页面代码">优秀网站看前端：小米Note介绍页面代码</a>
+</li><li><a href="http://developer.51cto.com/art/201502/464632.htm" target="_blank" title="软件项目将死的 27 个征兆">软件项目将死的 27 个征兆</a>
+</li></ul></div>
+<div id="top10_3" style="display: none;" class="list"><ul>
+<li><a href="http://developer.51cto.com/art/201501/464174.htm" target="_blank" title="近200篇机器学习&amp;深度学习资料分享（含">近200篇机器学习&amp;深度学习资料分享（含</a>
+</li><li><a href="http://developer.51cto.com/art/201501/463840.htm" target="_blank" title="2015年薪酬大涨的15个IT岗位">2015年薪酬大涨的15个IT岗位</a>
+</li><li><a href="http://developer.51cto.com/art/201501/463946.htm" target="_blank" title="成为高级程序员的 10 个步骤">成为高级程序员的 10 个步骤</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464113.htm" target="_blank" title="程序员愤怒了：我们不仅要当管理者还要">程序员愤怒了：我们不仅要当管理者还要</a>
+</li><li><a href="http://developer.51cto.com/art/201501/463234.htm" target="_blank" title="2015年1月编程语言排行榜：JavaScript">2015年1月编程语言排行榜：JavaScript</a>
+</li><li><a href="http://developer.51cto.com/art/201501/463338.htm" target="_blank" title="参考淘宝团队实践：一个简单粗暴的前后">参考淘宝团队实践：一个简单粗暴的前后</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464232.htm" target="_blank" title="2014年最热门的国人开发开源软件TOP100">2014年最热门的国人开发开源软件TOP100</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464170.htm" target="_blank" title="不要浪费时间去写所谓的完美代码">不要浪费时间去写所谓的完美代码</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464543.htm" target="_blank" title="PHP对战Node.js：一场关于开发者喜好的">PHP对战Node.js：一场关于开发者喜好的</a>
+</li><li><a href="http://developer.51cto.com/art/201501/464238.htm" target="_blank" title="关于大型网站技术演进的思考：存储的瓶">关于大型网站技术演进的思考：存储的瓶</a>
+</li></ul></div>
+ 
+ </div>
+<p class="blank1"></p>
+<div class="bor vlist" style="width:305px;height:250px;padding-left:5px;">
+<script type="text/javascript">
+    /*300*250 创建于 2015-12-16文章页右侧热点职位上方*/
+    var cpro_id = "u2452183";
+</script>
+<script src="./1_files/c.js" type="text/javascript"></script>
+</div>
+<div class="bor">
+<div class="titbg">
+<h3 class="fl t1">热点职位</h3>
+<a href="http://gaozhao.51cto.com/job-search/list" class="tmore">更多&gt;&gt;</a></div>
+	<div class="rmzwn_xx"><dl><dt><a href="http://gaozhao.51cto.com/job/view/id-2718.html" target="_blank"> C++/QT工程师 </a></dt><dd><h2>全职/3-5年/大专</h2><span>15k-20k</span><a href="http://gaozhao.51cto.com/company/view/id-588.html" target="_blank">恒安讯佳</a></dd></dl><dl><dt><a href="http://gaozhao.51cto.com/job/view/id-2915.html" target="_blank"> PHP开发工程师 </a></dt><dd><h2>全职/1-3年/大专</h2><span>5k-10k</span><a href="http://gaozhao.51cto.com/company/view/id-1.html" target="_blank">新浪网</a></dd></dl><dl><dt><a href="http://gaozhao.51cto.com/job/view/id-3034.html" target="_blank"> PHP研发工程师 </a></dt><dd><h2>全职/1-3年/本科</h2><span>10k-15k</span><a href="http://gaozhao.51cto.com/company/view/id-651.html" target="_blank">动视云科技</a></dd></dl><dl><dt><a href="http://gaozhao.51cto.com/job/view/id-3029.html" target="_blank"> web前段开发H5 </a></dt><dd><h2>全职/3-5年/大专</h2><span>7k-20k</span><a href="http://gaozhao.51cto.com/company/view/id-585.html" target="_blank">宜然网络科技</a></dd></dl><dl><dt><a href="http://gaozhao.51cto.com/job/view/id-3028.html" target="_blank"> java开发工程师 </a></dt><dd><h2>全职/1-3年/大专</h2><span>6k-11k</span><a href="http://gaozhao.51cto.com/company/view/id-615.html" target="_blank">创立科技</a></dd></dl></div>
+</div>
+<div class="blank10"></div>
+<script src="./1_files/51cto_sha1.js"></script>
+<div class="bor">
+<div class="titbg">
+<h3 class="fl t1">热点专题</h3>
+<a href="http://developer.51cto.com/speclist/1455" class="tmore">更多&gt;&gt;</a></div>
+<ul class="plist01">
+<li><a href="http://developer.51cto.com/art/201601/504920.htm" title="可视化技术 展现大数据之美"><img src="./1_files/wKiom1apwZezQ2ZqAABjl7y9EGs484.jpg" alt="可视化技术 展现大数据之美" width="100" height="80"></a>
+<h5><a href="http://developer.51cto.com/art/201601/504920.htm" title="可视化技术 展现大数据之美">可视化技术 展现大数</a></h5>
+<div class="c666">想要理解大数据，使之更贴近大多数人，最重要的手段的</div>
+</li><li><a href="http://developer.51cto.com/art/201601/504906.htm" title="编程初学者学什么语言好？未来编程趋势预测"><img src="./1_files/wKiom1apprHD2CWWAAANCMc-DtM958.jpg" alt="编程初学者学什么语言好？未来编程趋势预测" width="100" height="80"></a>
+<h5><a href="http://developer.51cto.com/art/201601/504906.htm" title="编程初学者学什么语言好？未来编程趋势预测">编程初学者学什么语言</a></h5>
+<div class="c666">新手程序员关注编程趋势就好比股民时刻关心股价走向一</div>
+</li><li><a href="http://developer.51cto.com/art/201601/503995.htm" title="聊一聊AngularJS在实际应用中的那些事"><img src="./1_files/wKiom1aXBLHQ00JuAABBsGzthxY778.jpg" alt="聊一聊AngularJS在实际应用中的那些事" width="100" height="80"></a>
+<h5><a href="http://developer.51cto.com/art/201601/503995.htm" title="聊一聊AngularJS在实际应用中的那些事">聊一聊AngularJS在实</a></h5>
+<div class="c666">AngularJS是很多Web开发人员在打造单页面应用程序时的</div>
+</li> 
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="tagCloud">
+<div class="tlt">
+<h3>热点标签</h3>
+</div>
+<div class="taglist"><a title="编程语言排行榜" href="http://developer.51cto.com/art/200911/165281.htm">编程语言排行榜</a> <a title="敏捷开发" href="http://developer.51cto.com/art/200803/68222.htm">敏捷开发</a> <a title="Eclipse" href="http://developer.51cto.com/art/201006/207407.htm">Eclipse 3.6</a> <a title="PHP设计模式" href="http://developer.51cto.com/art/201004/195765.htm">PHP设计模式</a> <a title="NetBeans7" href="http://developer.51cto.com/art/201105/259431.htm">NetBeans 7</a> <a title="Java7" href="http://developer.51cto.com/art/201001/175830.htm">Java7</a> <a title="Scala编程语言" href="http://developer.51cto.com/art/200906/127830.htm">Scala编程语言</a> <a title="Python编程世界" href="http://developer.51cto.com/art/201011/234347.htm">Python编程世界</a> <a title="Ruby" on="" rails开发="" href="http://developer.51cto.com/art/201007/215101.htm">Ruby On Rails开发</a> <a class="imp" title="LINQ" href="http://developer.51cto.com/art/200911/165090.htm">LINQ</a> <a title="ASP.NET视频教程" href="http://developer.51cto.com/art/200904/120314.htm">ASP.NET视频教程</a> <a title="Visual Studio" href="http://developer.51cto.com/art/201004/194262.htm">Visual Studio</a> <a title="智能手机" href="http://p.linkphone.cn/">智能手机</a> <a title="软件下载" href="http://download.linkphone.cn/">软件下载</a></div>
+</div>
+<div class="rss">
+<ul>
+<li class="lin f12-c"><a href="http://news.51cto.com/col/1323/"><strong>点击这里查看样刊</strong></a></li>
+<li>
+<dl>
+<dt> </dt>
+<dd><a href="http://home.51cto.com/index.php?s=/Subscribe"><img src="./1_files/dingy.gif"></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1">全站热点</h3>
+</div>
+<div class="webhot fixfloat">
+<ul>
+
+<li>
+  <a href="http://os.51cto.com/art/201511/496614.htm" title="最受管理员欢迎的顶级开源工具大盘点"><img src="./1_files/wKiom1ZWyd7QJLCRAABlagEKdF0049.jpg"></a>
+  <div><a href="http://os.51cto.com/art/201511/496614.htm" title="最受管理员欢迎的顶级开源工具大盘点">最受管理员欢迎的顶级开源工具大盘点</a></div>
+</li>
+
+<li>
+  <a href="http://netsecurity.51cto.com/art/201511/496744.htm" title="血拼双11 莫要购来商品丢了信息"><img src="./1_files/wKiom1ZC6IiCR3XzAAAdglH2V6w162.jpg"></a>
+  <div><a href="http://netsecurity.51cto.com/art/201511/496744.htm" title="血拼双11 莫要购来商品丢了信息">血拼双11 莫要购来商品丢了信息</a></div>
+</li>
+
+</ul>
+</div>
+<p class="blank1"></p>
+<ul class="list03">
+
+<li><a href="http://mdsa.51cto.com/art/201601/503892.htm" title="程序员MM的自白：磨人小妖精安卓碎片化">程序员MM的自白：磨人小妖精安卓碎片</a></li>
+
+<li><a href="http://developer.51cto.com/art/201601/503890.htm" title="用CSS边框图像让你的网站更漂亮">用CSS边框图像让你的网站更漂亮</a></li>
+
+<li><a href="http://network.51cto.com/art/201601/503884.htm" title="Wi-Fi联盟为低功耗Wi-Fi定名“Halow”">Wi-Fi联盟为低功耗Wi-Fi定名“Halow</a></li>
+
+<li><a href="http://cloud.51cto.com/art/201601/503882.htm" title="大型网站技术基石之 OpenStack">大型网站技术基石之 OpenStack</a></li>
+
+<li><a href="http://netsecurity.51cto.com/art/201601/503881.htm" title="飞塔防火墙曝SSH后门 官方回应并给出解决方案">飞塔防火墙曝SSH后门 官方回应并给出</a></li>
+
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1">读书</h3>
+</div>
+  
+<div class="catbook"><a href="http://book.51cto.com/art/200704/45749.htm" title="Oracle 10g应用指导与案例精讲"><img src="./1_files/154941169.gif" width="66" height="98" border="0"></a>
+<h5><a href="http://book.51cto.com/art/200704/45749.htm">Oracle 10g应用指导与案例精讲</a></h5>
+<div class="c666 text">本书作者结合自己多年实践经验，从Oracle开发应用中遇到的问题着手，全面系统地介绍Oracle的安装与卸载、数据字典、安全管理以及</div>
+</div>
+
+
+<ul class="list03">
+
+<li><a href="http://book.51cto.com/art/200710/58274.htm" title="软件设计师考试考前冲刺预测卷及考点解析">软件设计师考试考前冲刺预测卷及考点解析</a></li>
+
+<li><a href="http://book.51cto.com/art/200710/58355.htm" title="网络工程师考试考前冲刺预测卷及考点解析">网络工程师考试考前冲刺预测卷及考点解析</a></li>
+
+<li><a href="http://book.51cto.com/art/200710/58383.htm" title="网管员必读—超级网管经验谈（第2版）">网管员必读—超级网管经验谈（第2版）</a></li>
+
+<li><a href="http://book.51cto.com/art/200710/58437.htm" title="Microsoft SQL Server 2005技术内幕：存储引擎">Microsoft SQL Server 2005技术内幕：存储引擎</a></li>
+
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1 fl">博文推荐</h3>
+<a class="tmore" href="http://blog.51cto.com/">更多&gt;&gt;</a></div>
+
+<ul class="list03">
+ <li><a href="http://shenhj.blog.51cto.com/829152/610061/" target="_blank" title="Citrix XenDesktop VS Vmware View (上）-你必须懂得">Citrix XenDesktop VS Vmware View (</a></li><li><a href="http://hellosa.blog.51cto.com/2698675/610052/" target="_blank" title="升级系统自带的perl">升级系统自带的perl</a></li><li><a href="http://miao7616.blog.51cto.com/3258248/610037/" target="_blank" title="IT项目管理之问题漏斗">IT项目管理之问题漏斗</a></li><li><a href="http://xdesigner.blog.51cto.com/3148541/609900/" target="_blank" title="【毕业生的商业软件开发之路】初入职场">【毕业生的商业软件开发之路】初入职</a></li>
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="tj">
+<div class="tlt">
+<h3>最新热帖</h3>
+<a class="more" href="http://bbs.51cto.com/hotthreads.php">更多&gt;&gt;</a></div>
+<ul>
+<li><a href="http://bbs.51cto.com/thread-1036439-1.html" target="_blank" title="一个 ACL列表中有多个条目， 怎么删除其中的一个。">一个 ACL列表中有多个条目， 怎么删</a></li><li><a href="http://bbs.51cto.com/thread-969755-1.html" target="_blank" title="【面试题】大智慧网站运维工程师面试题">【面试题】大智慧网站运维工程师面试</a></li><li><a href="http://bbs.51cto.com/thread-796264-1.html" target="_blank" title="2011届IT专业大学生专场！">2011届IT专业大学生专场！</a></li><li><a href="http://bbs.51cto.com/thread-609530-1.html" target="_blank" title="一次RAID0崩溃的思考">一次RAID0崩溃的思考</a></li><li><a href="http://bbs.51cto.com/thread-537384-1.html" target="_blank" title="打字">打字</a></li>
+</ul>
+</div>
+<div class="picAD">
+<iframe class="bann" frameborder="0" src="./1_files/baidu.html" scrolling="no" style="height: 265px; width: 300px; padding: 0px; margin: 0px; overflow: hidden; background-color: white;"></iframe>
+</div>
+</div>
+<p class="blank1"></p> 
+<!--leftbotcon end-->
+</div> 
+<div style="width:960px; margin:0 auto;">
+<script type="text/javascript">
+    /*960*90 创建于 2015-11-05文章页 旗下网站上方通栏*/
+    var cpro_id = "u2386966";
+</script>
+<script src="./1_files/c.js" type="text/javascript"></script>
+</div>
+<div class="subweb">
+<h4>51CTO旗下网站</h4>
+<div>
+<a target="_blank" href="http://www.51cto.com/">领先的IT技术网站 51CTO</a>
+<a target="_blank" href="http://www.watchstor.com/">领先的中文存储媒体 WatchStor</a>
+<a target="_blank" href="http://www.cioage.com/">中国首个CIO网站 CIOage</a>
+<a target="_blank" href="http://www.hc3i.cn/">中国首家数字医疗网站 HC3i</a>
+</div>
+</div>
+<div id="ft"><div id="foot" align="center"><script src="./1_files/copy_right.js"></script>Copyright&#169;2005-2016 <a href="http://www.51cto.com/">51CTO.COM</a> 版权所有 未经许可 请勿转载<div style="display:none;"><script src="./1_files/h.js" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=d55da66c9f787db48875408c202cde11" target="_blank"><img border="0" src="./1_files/21.gif" width="20" height="20"></a></div></div></div><img src="./1_files/baidu_jgylogo3.gif" style="display: none;">
+<script src="./1_files/count.js"></script><script src="./1_files/count.php"></script><script src="./1_files/scroll.js"></script>
+
+<script type="text/javascript">
+	$("#uyan_cmt_list").next().remove();	
+	$("#uyan_cmt_list").next().css("display","none");	
+</script>
+<style>
+.Nfloat { position: fixed; right: 2%; top: 35%; z-index: 801; }
+</style>
+
+
+
+<!-- 新监测代码 -->
+<!-- 新监测代码 -->
+<div id="MyMoveAd" style="display: none; height: 2px;">
+<span id="wordlink_1"><script src="./1_files/wordlink1.js"></script></span>
+<span id="wordlink_2"><script src="./1_files/wordlink2.js"></script></span>
+<span id="wordlink_3"><script src="./1_files/wordlink3.js"></script></span>
+<span id="wordlink_4"><script src="./1_files/wordlink4.js"></script></span>
+<span id="pinglun"><script language="JavaScript" src="./1_files/getArtCount.php"></script>0</span>
+<span id="tonglan"></span>
+<span id="wordlink"><script language="JavaScript" src="./1_files/ad(2).js"></script></span>
+<script src="./1_files/ad(2).js"></script>
+<span id="bookss"><script language="JavaScript" src="./1_files/getBookData.php"></script></span>
+</div>   
+<script language="javascript" src="./1_files/favorite.js"></script>
+
+<script language="javaScript" src="./1_files/dialog_utf8.js"></script>
+<script language="javaScript" src="./1_files/mail.js"></script>  
+<script type="text/javascript" src="./1_files/favorbox.js"></script>
+<script language="javascript" src="./1_files/clipboard.js"></script>
+<script language="javaScript"> 
+	var thistid=190605; 
+	
+	//收藏按钮
+	var favor_url = 'http://developer.51cto.com/art/201003/190605.htm';  // 如：http://bbs.51cto.com/thread-789649-1.html
+	var favor_title = '用Python os.listdir判断相关路径是否为文件的方案';       //  
+	
+	//绑定复制按钮
+	copy('msnqqcopy', 'http://developer.51cto.com/art/201003/190605.htm', '分享到MSN/QQ的链接复制成功!');
+//	copy('bbscopy', '[url=http://developer.51cto.com/art/201003/190605.htm][u]用Python os.listdir判断相关路径是否为文件的方案[/u][/url]', '分享到论坛的UBB代码复制成功!');
+
+</script><div style="position: absolute; left: 784px; top: 1751px; width: 34px; height: 12px; z-index: 99;"><embed id="ZeroClipboardMovie_1" src="http://images.51cto.com/images/art/newart1012/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="34" height="12" name="ZeroClipboardMovie_1" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=1&amp;width=34&amp;height=12" wmode="transparent"></div> 
+<script src="./1_files/index.php" charset="utf-8"></script>
+<script src="./1_files/count(1).php" language="javascript"></script>
+<script language="javascript">
+document.getElementById('books').innerHTML = document.getElementById("bookss").innerHTML; 
+</script>
+
+
+
+</body></html>

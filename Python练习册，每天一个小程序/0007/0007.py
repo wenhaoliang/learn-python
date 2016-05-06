@@ -14,7 +14,7 @@ def get_files(path):
             files.append(fppath)#将文件添加到files中
         elif(os.path.isdir(fppath)):#判断是否为文件夹
             files += get_files(fppath)#使用一个迭代将文件夹里的文件加入到files中
-    return files#返回files列表
+    return files#返回files列表 
 
 # 统计代码，空行与注释
 def count_lines(files):

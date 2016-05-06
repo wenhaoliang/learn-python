@@ -15,4 +15,4 @@ if __name__ == '__main__':
     num = count(u'英文字符.txt')
     print num
 
-	
+	 

@@ -16,4 +16,4 @@ def rand_str(num, length = 7):
     f.close()#关闭文件
 
 if __name__ == '__main__':
-    rand_str(200,8)
+    rand_str(200,8) 

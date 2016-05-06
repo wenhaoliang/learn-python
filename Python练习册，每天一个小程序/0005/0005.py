@@ -14,5 +14,5 @@ for x in L:
     xsize, ysize = img.size#获取高宽
     xsize = 500#设定高
     ysize = ysize * 500 // xsize#设定宽
-    img = ImageOps.fit(img,(xsize,ysize))#修改尺寸
+    img = ImageOps.fit(img,(xsize,ysize))#修改尺寸 
     img.save("out"+x)#保存

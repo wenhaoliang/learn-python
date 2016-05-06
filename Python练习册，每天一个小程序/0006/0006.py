@@ -14,7 +14,7 @@ def find_word(file_path):
 				f = open(x, 'r')#打开文件，以读的方式
 				data = f.read()#读取
 				f.close()#关闭
-				words = word_re.findall(data)#匹配【a-zA-Z0-9】
+				words = word_re.findall(data)#匹配【a-zA-Z0-9】 
 				for word in words:#遍历英文，记录每次词出现的次数
 					if word not in word_dic:
 						word_dic[word] = 1

@@ -23,12 +23,12 @@ def create_image(image_size = (300, 100),
 		for i in range(text_num):
 			text = random.choice(string.ascii_uppercase)#ABCDEFGHIJKLMNOPQRSTUVWXYZ
 			text_loc = ((image_width - font_width) / text_num * (i + 0.5), (image_height - font_height) / 2.3)#不懂，标记
-			draw.text(text_loc, text, font = text_font, fill = (random.randint(0, 255) / 2, random.randint(0, 255) / 2, random.randint(0, 255) / 2))
+			draw.text(text_loc, text, font = text_font, fill = (random.randint(0, 255) / 2, random.randint(0, 255) / 2, random.randint(0, 255) / 2))#写入
 			
 	def create_points():#定义画点函数
 		for w in range(image_width):
 			for h in range(image_height):
-				tmp = random.randint(0, 100)
+				tmp = random.randint(0, 100)#随机（0，100）数字
 				if tmp > point_chance:
 					draw.point((w, h), fill = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
 	

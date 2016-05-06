@@ -1,6 +1,6 @@
 # encoing = utf-8
 
-import requests
+import request
 import json, base64, uuid, os
 import wave
 import pycurl
@@ -20,7 +20,7 @@ def get_mac_address():
 def get_access_token():
     url = "https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id=ZrjLfF5Rh7pOL66gaOmDGnXn&client_secret=16bac9645093ca2632ebb81015ff7544"
 
-    req = requests.Request(url, method="POST")
+    req = request.Request(url, method="POST")
     resp = request.urlopen(req)
     data = resp.read().decode('utf-8')
     json_data = json.loads(data)

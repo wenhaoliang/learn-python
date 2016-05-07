@@ -21,6 +21,6 @@ from calc import views as calc_views
  
 urlpatterns = [
     url(r'^add/', calc_views.add, name='add'),	# 注意修改了这一行
-    url(r'^add/(\d+)/(\d+)/$', calc_views.add2, name='add2'),#正则表达式中 \d 代表一个数字，+ 代表一个或多个前面的字符，写在一起 \d+ 就是一个或多个数字，用括号括起来的意思是保存为一个子组
+    url(r'^add2/(\d+)/(\d+)/$', calc_views.add2, name='add2'),
     url(r'^admin/', admin.site.urls),
 ]

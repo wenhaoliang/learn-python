@@ -1,4 +1,5 @@
-"""practice URL Configuration
+#-*- coding:utf-8 -*-
+"""zqxt_views URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -15,9 +16,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from learn import views as learn_views  #从learn文件夹里导入iew文件
+from calc import views as calc_views
+ 
  
 urlpatterns = [
-    url(r'^$',learn_views.index),  #
+    url(r'^add/', calc_views.add, name='add'),	# 注意修改了这一行
+    url(r'^add/(\d+)/(\d+)/$', calc_views.add2, name='add2'),#正则表达式中 \d 代表一个数字，+ 代表一个或多个前面的字符，写在一起 \d+ 就是一个或多个数字，用括号括起来的意思是保存为一个子组
     url(r'^admin/', admin.site.urls),
 ]

@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from calc import views as calc_views
+from learn import views as learn_views
  
  
 urlpatterns = [
-    url(r'^add/', calc_views.add, name='add'),	# 注意修改了这一行
-    url(r'^add2/(\d+)/(\d+)/$', calc_views.add2, name='add2'),
+    url(r'^$', learn_views.home, name = "home"),
+
     url(r'^admin/', admin.site.urls),
 ]

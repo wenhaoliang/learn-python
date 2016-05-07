@@ -11,3 +11,6 @@ def add(request):
 def add2(request, a, b):
     c = int(a) + int(b)
     return HttpResponse(str(c))
+	
+def home(request):
+    return render(request, "home.html")

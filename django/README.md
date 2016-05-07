@@ -1,0 +1,2 @@
+打开虚拟环境
+django\Scripts\activate

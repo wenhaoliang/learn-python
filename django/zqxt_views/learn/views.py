@@ -22,3 +22,7 @@ def home(request):
 def home(request):
     TutorialList = ['HTML', 'CSS', 'jQuery', 'Python', 'Django']
     return render(request, 'home.html', {'TutorialList': TutorialList})
+	
+def home(request):
+	info_dict = {'site': u"大懒虫", 'content':u"奇妙的世界"}
+	return render(request, "home.html", {'info_dict': info_dict})

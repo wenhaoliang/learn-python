@@ -7,14 +7,16 @@
 <p>这里是首页，欢迎光临</p>
 <p>{{ string }}</p>
 <p>教程列表</p>
+
 {% for i in TutorialList %}
 {{ i }}
-<p>站点： {{ info_dice.site }}</p>
-<P>哈哈： {{ info_dice.content }}</p>
-站点：{{ info_dict.site }} 内容：{{ info_dict.content }}
-{% for key, value in info_dict.items %}
-    {{ key }}: {{ value }}
 {% endfor %}
-{% endfor %}
+
+<p>站点： {{ info_dict.site }}</p>
+<P>哈哈： {{ info_dict.content }}</p>
+
+
+
+
 
 {% endblock %}

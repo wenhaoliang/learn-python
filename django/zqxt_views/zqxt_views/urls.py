@@ -20,7 +20,8 @@ from learn import views as learn_views
  
  
 urlpatterns = [
-    url(r'^jiafa/(\d+)/(\d+)/$', learn_views.add, name='add'),
+
+    url(r'^$', learn_views.home, name = "home"),
 
     url(r'^admin/', admin.site.urls),
 ]

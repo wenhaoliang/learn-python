@@ -15,7 +15,7 @@ def add(request, a, b):
 def home(request):
     return render(request, "home.html")
 	
-''''def home(request):
+def home(request):
     string = u'我在自强学堂学习Django，用它来建网站'
     return render(request, 'home.html', {'string': string})
 
@@ -28,6 +28,5 @@ def home(request):
 	return render(request, "home.html", {'info_dict': info_dict})
 
 def home(request):
-	List = map(str, range(1000)) 
+	List = map(str, range(10)) 
 	return render(request, 'home.html', {'List': List})
-	'''

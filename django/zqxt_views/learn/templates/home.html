@@ -15,26 +15,17 @@
 <p>站点： {{ info_dict.site }}</p>
 <P>哈哈： {{ info_dict.content }}</p>
 
-{% for item in List %}
+<p>{% for item in List %}
 	{{ item}}
 	{% if not forloop.last %},{% endif %}
 {% endfor %}
+</p>
 
-{% url 'add' 4 5 %}
-
-{% if var >= 90 %}
-成绩优秀，自强学堂你没少去吧！学得不错
-{% elif var >= 80 %}
-成绩良好
-{% elif var >= 70 %}
-成绩一般
-{% elif var >= 60 %}
-需要努力
+{{ request.user }}
+{% if request.user.is_authenticated %}
+	{{ request.user.username }}, hello!
 {% else %}
-不及格啊，大哥！多去自强学堂学习啊！
+	请登录:
 {% endif %}
-
-
-
 
 {% endblock %}

@@ -16,5 +16,9 @@ def home(request):
     return render(request, "home.html")
 	
 def home(request):
-	string = u'我在自强学堂学习Django，用它来建网站'
-	return render(request, 'home.html', {'string': string})
+    string = u'我在自强学堂学习Django，用它来建网站'
+    return render(request, 'home.html', {'string': string})
+
+def home(request):
+    TutorialList = ['HTML', 'CSS', 'jQuery', 'Python', 'Django']
+    return render(request, 'home.html', {'TutorialList': TutorialList})

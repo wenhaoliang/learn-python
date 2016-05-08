@@ -5,5 +5,10 @@
 {% block content %}
 
 <p>这里是首页，欢迎光临</p>
-{{ string }}
+<p>{{ string }}</p>
+<p>教程列表</p>
+{% for i in TutorialList %}
+{{ i }}
+{% endfor %}
+
 {% endblock %}

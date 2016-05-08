@@ -16,7 +16,8 @@
 <P>哈哈： {{ info_dict.content }}</p>
 
 {% for item in List %}
-	{{ item}},
+	{{ item}}
+	{% if not forloop.last %},{% endif %}
 {% endfor %}
 
 

@@ -1,7 +1,8 @@
-#coding:utf-8
+﻿#coding:utf-8
 import urllib
 import urllib2
 import re
+
 
 #处理页面标签
 class Tool:
@@ -117,20 +118,20 @@ class BDTB:
         title = self.getTitle(indexPage)
         self.setFileTitle(title)
         if pageNum == None:
-            print u"URL已失效，请重试"
+            print u"这个网址已经失效了哦，请更换个网址~"
             return
         try:
-            print u"该帖子共有" + str(pageNum) + u"页"
+            print u"该帖子一共有" + str(pageNum) + u"页哦"
             for i in range(1, int(pageNum) + 1):
-                print u"正在写入第" + str(i) + u"页数据"
+                print u"正在写入第" + str(i) + u"哦，请稍安勿躁~"
                 page = self.getPage(i)
                 contents = self.getContent(page)
                 self.writeData(contents)
-        # 出现写入异常
+        #出现写入异常
         except IOError, e:
-            print u"写入异常，原因" + e.message
+            print u"出现写入错误了哦，原因是：" + e.message
         finally:
-            print u"写入任务完成"
+            print u"任务完成了哦，请享受它吧~"
 
 
 if __name__ == "__main__":

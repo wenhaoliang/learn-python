@@ -53,15 +53,16 @@ class BDTB:
 
     def getPage(self, pageNum):
         try:
-            #构建URL
+            # 构建URL
             url = self.baseURL + self.seeLZ + '&pn=' + str(pageNum)
             request = urllib2.Request(url)
             response = urllib2.urlopen(request)
-            #返回UTF-8格式编码错误
+            # 返回UTF-8格式编码内容
             return response.read().decode('utf-8')
+        # 无法连接，报错
         except urllib2.URLError, e:
             if hasattr(e, "reason"):
-                print u"链接百度贴吧失败，错误原因是：", e.reason
+                print u"连接百度贴吧失败,错误原因", e.reason
                 return None
 
     def  getTitle(self, page):
@@ -135,8 +136,8 @@ class BDTB:
 
 
 if __name__ == "__main__":
-    print u"请输入帖子代号"
-    baseURL = 'http://tieba.baidu.com/p/' + str(raw_input())
+   # print u"请输入帖子代号"
+    baseURL = 'http://tieba.baidu.com/p/' + str(raw_input(u'http://tieba.baidu.com/p/'))
     seeLZ = raw_input("是否只获取楼主发言，是输入1，否输入0\n")
     floorTag = raw_input("是否写入楼层信息，是输入1，否输入0\n")
     bdtb = BDTB(baseURL, seeLZ, floorTag)

@@ -84,7 +84,7 @@ class BDTB:
     def writeData(self,contents):
         for item in contents:
             if self.floorTag == "1":
-                floorLine =  '\n' +str(self.floor) + u"---------------------------------------师父最漂亮了--------------------------------------\n"
+                floorLine =  '\n' +str(self.floor) + u"---------------------------------------念念最漂亮了--------------------------------------\n"
                 self.file.write(floorLine.encode('utf-8'))
             self.file.write(item)
             self.floor += 1

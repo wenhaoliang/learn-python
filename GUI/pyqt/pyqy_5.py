@@ -5,22 +5,23 @@ import sys
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 
-class QuitButton(QtGui.QWidget):
-
+class MessageBox(QtGui.QWidget):
     def __init__(self, parent = None):
         QtGui.QWidget.__init__(self, parent)
 
         self.setGeometry(300, 300, 250, 150)
-        self.setWindowTitle(u"退出")
+        self.setWindowTitle(u"退出信息")
 
-        quit = QtGui.QPushButton(u"关闭", self)
-        quit.setGeometry(100, 100, 64, 35)
+    def closeEvent(self, event):
+        reply = QtGui.QMessageBox.question(self, u'你好啊',
+            u'你确定要退出吗？', QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
 
-        self.connect(quit, QtCore.SIGNAL("clicked()"),
-                     QtGui.qApp, QtCore.SLOT("quit()"))
-
+        if reply == QtGui.QMessageBox.Yes:
+                event.accept()
+        else:
+                event.ignore()
 
 app = QtGui.QApplication(sys.argv)
-qb = QuitButton()
+qb = MessageBox()
 qb.show()
 sys.exit(app.exec_())

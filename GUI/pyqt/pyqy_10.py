@@ -32,7 +32,3 @@ app = QtGui.QApplication(sys.argv)
 fp = MainWindow()
 fp.show()
 sys.exit(app.exec_())
-
-
-
-

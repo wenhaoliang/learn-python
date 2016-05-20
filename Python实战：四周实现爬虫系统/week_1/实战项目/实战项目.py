@@ -1,6 +1,5 @@
 #coding: utf-8
 
-import urllib
 import requests
 from bs4 import BeautifulSoup
 

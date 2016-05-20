@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MongoConfiguration">
+    <option name="serverConfigurations">
+      <list>
+        <ServerConfiguration>
+          <option name="collectionsToIgnore">
+            <list>
+              <option value="啊" />
+            </list>
+          </option>
+          <option name="label" value="大懒虫" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+        </ServerConfiguration>
+      </list>
+    </option>
+  </component>
+</project>

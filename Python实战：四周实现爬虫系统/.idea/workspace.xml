@@ -15,14 +15,15 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$1_4.coverage" NAME="1_4 Coverage Results" MODIFIED="1463718501092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_1/1_4" />
-    <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$tieba.coverage" NAME="tieba Coverage Results" MODIFIED="1463885259751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../sapider/tieba" />
-    <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$xiecheng.coverage" NAME="xiecheng Coverage Results" MODIFIED="1463908561658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiecheng" />
+    <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$tieba.coverage" NAME="tieba Coverage Results" MODIFIED="1463909103057" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../sapider/tieba" />
+    <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$xiecheng.coverage" NAME="xiecheng Coverage Results" MODIFIED="1463912137473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiecheng" />
     <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$channel_extracing.coverage" NAME="channel_extracing Coverage Results" MODIFIED="1463822482319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_2/第二周实战项目" />
     <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$try.coverage" NAME="try Coverage Results" MODIFIED="1463825730182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_2/test" />
     <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$main_1.coverage" NAME="main_1 Coverage Results" MODIFIED="1463833593096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_2/第二周实战项目" />
     <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$1_2.coverage" NAME="1_2 Coverage Results" MODIFIED="1463664130574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_1/1_2" />
     <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$.coverage" NAME="第二周实战作业 Coverage Results" MODIFIED="1463815505358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_2" />
     <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$page_parsing.coverage" NAME="page_parsing Coverage Results" MODIFIED="1463833561897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_2/第二周实战项目" />
+    <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$xiecheng_1.coverage" NAME="xiecheng_1 Coverage Results" MODIFIED="1463915050646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiecheng" />
     <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1463825926464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_2/test" />
     <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$2_1.coverage" NAME="2_1 Coverage Results" MODIFIED="1463806935267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_2/2_1" />
     <SUITE FILE_PATH="coverage/Python实战：四周实现爬虫系统$1_3.coverage" NAME="1_3 Coverage Results" MODIFIED="1463665861773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/week_1/1_3" />
@@ -51,13 +52,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="xiecheng.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="xiecheng.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xiecheng/xiecheng.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            <state relative-caret-position="55">
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
               <folding>
                 <element signature="e#16#31#0" expanded="true" />
+                <marker date="1463912347896" expanded="true" signature="178:1738" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xiecheng_1.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xiecheng/xiecheng_1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="e#15#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,6 +115,7 @@
         <option value="$PROJECT_DIR$/week_2/第二周实战项目/page_parsing.py" />
         <option value="$PROJECT_DIR$/../sapider/tieba/tieba.py" />
         <option value="$PROJECT_DIR$/xiecheng/xiecheng.py" />
+        <option value="$PROJECT_DIR$/xiecheng/xiecheng_1.py" />
       </list>
     </option>
   </component>
@@ -157,18 +172,18 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\practice\learn-python\Python实战：四周实现爬虫系统\week_2\2_1" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\practice\learn-python\Python实战：四周实现爬虫系统\xiecheng" />
       <recent name="E:\practice\learn-python\Python实战：四周实现爬虫系统\week_2\2_3" />
       <recent name="E:\practice\learn-python\Python实战：四周实现爬虫系统\week_2\第二周实战项目" />
       <recent name="E:\practice\learn-python\Python实战：四周实现爬虫系统\week_2\2_1" />
       <recent name="E:\practice\Plan-for-combating\week2\2_1\2_1code_of_video" />
-      <recent name="E:\practice\learn-python\Python实战：四周实现爬虫系统\week_1\1_4" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\practice\learn-python\Python实战：四周实现爬虫系统\week_2\2_1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.xiecheng">
+  <component name="RunManager" selected="Python.xiecheng_1">
     <configuration default="false" name="main_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -183,24 +198,6 @@
       <module name="Python实战：四周实现爬虫系统" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/week_2/第二周实战项目/main_1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="2_3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/week_2/2_3" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Python实战：四周实现爬虫系统" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/week_2/2_3/2_3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -255,6 +252,24 @@
       <module name="Python实战：四周实现爬虫系统" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xiecheng/xiecheng.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="xiecheng_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/xiecheng" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Python实战：四周实现爬虫系统" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xiecheng/xiecheng_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -469,18 +484,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.main_1" />
-      <item index="1" class="java.lang.String" itemvalue="Python.2_3" />
-      <item index="2" class="java.lang.String" itemvalue="Python.page_parsing" />
-      <item index="3" class="java.lang.String" itemvalue="Python.tieba" />
-      <item index="4" class="java.lang.String" itemvalue="Python.xiecheng" />
+      <item index="1" class="java.lang.String" itemvalue="Python.page_parsing" />
+      <item index="2" class="java.lang.String" itemvalue="Python.tieba" />
+      <item index="3" class="java.lang.String" itemvalue="Python.xiecheng" />
+      <item index="4" class="java.lang.String" itemvalue="Python.xiecheng_1" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.xiecheng" />
-        <item index="1" class="java.lang.String" itemvalue="Python.tieba" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main_1" />
-        <item index="3" class="java.lang.String" itemvalue="Python.page_parsing" />
-        <item index="4" class="java.lang.String" itemvalue="Python.2_3" />
+        <item index="0" class="java.lang.String" itemvalue="Python.xiecheng_1" />
+        <item index="1" class="java.lang.String" itemvalue="Python.xiecheng" />
+        <item index="2" class="java.lang.String" itemvalue="Python.tieba" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main_1" />
+        <item index="4" class="java.lang.String" itemvalue="Python.page_parsing" />
       </list>
     </recent_temporary>
   </component>
@@ -501,7 +516,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17019667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -510,7 +525,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3579109" sideWeight="0.49092284" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39324117" sideWeight="0.49092284" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31694403" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32565284" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -569,13 +584,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/week_1/1_4/WeHeartIt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/week_1/1_1/homework.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -892,10 +900,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xiecheng/xiecheng.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        <state relative-caret-position="55">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
           <folding>
             <element signature="e#16#31#0" expanded="true" />
+            <marker date="1463912347896" expanded="true" signature="178:1738" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiecheng/xiecheng_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#15#29#0" expanded="true" />
           </folding>
         </state>
       </provider>

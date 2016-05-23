@@ -20,7 +20,12 @@ def get_pages(base_url):
             for page in pages:
                 page = page.get('href')
                 pages_url.append(page)
+                # for i in pages_url:
+                #     print(len(i))
+    print('本次一共获取到'+'len(pages_url)'+'个页面哦')
     return pages_url
+
+
 
 def get_pages_info(url):
     wb_data = requests.get(url)
@@ -39,3 +44,4 @@ def get_pages_info(url):
             '交易地点':places.get_text()
         }
         ganji_data.insert_one(data)
+

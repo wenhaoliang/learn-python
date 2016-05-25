@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 client = pymongo.MongoClient('localhost', 27017)
 ganji = client['ganji']
-ganji_data = ganji['ganjin_data']
+ganjin_data = ganji['ganjin_data']
 
 
 def get_pages(base_url):
@@ -22,7 +22,7 @@ def get_pages(base_url):
                 pages_url.append(page)
                 # for i in pages_url:
                 #     print(len(i))
-    print('本次一共获取到'+'len(pages_url)'+'个页面哦')
+    print('本次一共获取到',len(pages_url),'个页面哦')
     return pages_url
 
 
@@ -43,5 +43,5 @@ def get_pages_info(url):
             '价格' : prices.get_text(),
             '交易地点':places.get_text()
         }
-        ganji_data.insert_one(data)
+        ganjin_data.insert_one(data)
 

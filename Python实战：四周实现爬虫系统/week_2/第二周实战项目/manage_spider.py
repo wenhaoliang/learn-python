@@ -1,6 +1,6 @@
 import time
 from multiprocessing import Pool
-from channel_extracing import get_url_from
+#from channel_extracing import get_url_from
 from page_parsing import get_pages, get_pages_info
 
 
@@ -15,7 +15,7 @@ from page_parsing import get_pages, get_pages_info
 #         get_pages_info(pages_urls[j])
 
 urls = [
-    'http://zz.ganji.com/jiaju/',
+   # 'http://zz.ganji.com/jiaju/',
     'http://zz.ganji.com/rirongbaihuo/',
     'http://zz.ganji.com/shouji/',
     'http://zz.ganji.com/shoujihaoma/',
@@ -40,6 +40,7 @@ def get_pages_(url):
     page = get_pages(url)
     for pages_url in page:
         get_pages_info(pages_url)
+        #time.sleep(2)
 
 if __name__ == '__main__':
 

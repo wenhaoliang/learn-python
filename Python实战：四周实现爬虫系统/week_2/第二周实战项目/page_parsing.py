@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 client = pymongo.MongoClient('localhost', 27017)
 ganji = client['ganji']
-ganjin_data = ganji['ganjin_data']
+ganji_data = ganji['ganji_data']
 
 
 def get_pages(base_url):
@@ -43,5 +43,5 @@ def get_pages_info(url):
             '价格' : prices.get_text(),
             '交易地点':places.get_text()
         }
-        ganjin_data.insert_one(data)
+        ganji_data.insert_one(data)
 

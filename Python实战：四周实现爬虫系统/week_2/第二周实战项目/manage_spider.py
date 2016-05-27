@@ -16,12 +16,12 @@ from page_parsing import get_pages, get_pages_info
 
 urls = [
    # 'http://zz.ganji.com/jiaju/',
-    'http://zz.ganji.com/rirongbaihuo/',
-    'http://zz.ganji.com/shouji/',
-    'http://zz.ganji.com/shoujihaoma/',
-    'http://zz.ganji.com/bangong/',
-    'http://zz.ganji.com/nongyongpin/',
-    'http://zz.ganji.com/jiadian/',
+   #  'http://zz.ganji.com/rirongbaihuo/',
+   #  'http://zz.ganji.com/shouji/',
+   #  'http://zz.ganji.com/shoujihaoma/',
+   #  'http://zz.ganji.com/bangong/',
+   #  'http://zz.ganji.com/nongyongpin/',
+   #  'http://zz.ganji.com/jiadian/',
     'http://zz.ganji.com/ershoubijibendiannao/',
     'http://zz.ganji.com/ruanjiantushu/',
     'http://zz.ganji.com/yingyouyunfu/',

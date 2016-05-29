@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from ganji.views import index
-urlpatterns = [
+from ganji.views import home
+urlpatterns = {
     url(r'^admin/', admin.site.urls),
-    url(r'^index/',index),
-]
+    url(r'^index/', index),
+    url(r'home/', home)
+}
 

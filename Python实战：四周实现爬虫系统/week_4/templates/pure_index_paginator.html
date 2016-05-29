@@ -46,6 +46,7 @@
             <div class="posts">
                 <h1 class="content-subhead">数据信息</h1>
                 {% for item in ItemInfo %}
+                {}}
                 <section class="post">
                     <header class="post-header">
 
@@ -55,8 +56,8 @@
                             {% for cate in item.cates %}
                             <a class="post-category post-category-pure" href="#">{{ cate }}</a>
                             {% endfor %}
-                            {% for a in item.area %}
-                            <a class="post-category post-category-design" href="#">{{ a }}</a>
+                            {% for area in item.area %}
+                            <a class="post-category post-category-design" href="#">{{ area }}</a>
                             {% endfor %}
                         </p>
                     </header>

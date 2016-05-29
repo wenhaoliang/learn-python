@@ -3,10 +3,8 @@ from django.db import models
 # Create your models here.
 from mongoengine import *
 
-
-# ORM
-
 class ItemInfo(Document):
+
     title = StringField()
     url = StringField()
     pub_date = StringField()
@@ -15,7 +13,4 @@ class ItemInfo(Document):
     look = StringField()
     time = StringField()
     price = IntField()
-    meta = {'collection':'item_info'}
-
-for i in ItemInfo.objects[:100]:
-    print(i.price)
+    meta = {'collection': 'item_info'}

@@ -28,21 +28,23 @@ def get_pages(base_url):
 
 
 def get_pages_info(url):
-    wb_data = requests.get(url)
-    soup = BeautifulSoup(wb_data.text, 'lxml')
-    titles = soup.select('h1.title-name')
-    times = soup.select('i.pr-5')
-    types = soup.select('ul.det-infor > li:nth-of-type(1) > span')
-    prices = soup.select('i.f22.fc-orange.f-type')
-    places = soup.select("ul.det-infor > li > a")
-    for titles, times, types, prices, places in zip(titles, times, types, prices, places):
-        data = {
-            '标题': titles.get_text(),
-            '发布时间': times.get_text().strip().split(' ')[0] if len(times) > 0 else "",
-            '类型' : types.get_text(),
-            '价格' : prices.get_text(),
-            '交易地点':places.get_text(),
-            'url': url
-        }
-        ganji_data1.insert_one(data)
-
+    try:
+        wb_data = requests.get(url)
+        soup = BeautifulSoup(wb_data.text, 'lxml')
+        titles = soup.select('h1.title-name')
+        times = soup.select('i.pr-5')
+        types = soup.select('ul.det-infor > li:nth-of-type(1) > span')
+        prices = soup.select('i.f22.fc-orange.f-type')
+        places = soup.select("ul.det-infor > li > a")
+        for titles, times, types, prices, places in zip(titles, times, types, prices, places):
+            data = {
+                '标题': titles.get_text(),
+                '发布时间': times.get_text().strip().split(' ')[0] if len(times) > 0 else "",
+                '类型' : types.get_text(),
+                '价格' : prices.get_text(),
+                '交易地点':places.get_text(),
+                'url': url
+            }
+            ganji_data1.insert_one(data)
+    except Exception as e:
+        print(e)

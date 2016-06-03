@@ -137,7 +137,7 @@ class BDTB:
 
 if __name__ == "__main__":
    # print u"请输入帖子代号"
-    baseURL = 'http://tieba.baidu.com/p/' + str(raw_input(u'http://tieba.baidu.com/p/'))
+    baseURL = 'http://tieba.baidu.com/p/' + str(raw_input())
     seeLZ = raw_input("是否只获取楼主发言，是输入1，否输入0\n")
     floorTag = raw_input("是否写入楼层信息，是输入1，否输入0\n")
     bdtb = BDTB(baseURL, seeLZ, floorTag)

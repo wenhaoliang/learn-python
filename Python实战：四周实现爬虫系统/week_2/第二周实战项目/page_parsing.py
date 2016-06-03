@@ -1,11 +1,11 @@
 import pymongo
 import requests
 from bs4 import BeautifulSoup
-
+import time
 
 client = pymongo.MongoClient('localhost', 27017)
 ganji = client['ganji']
-ganji_data1 = ganji['ganji_data1']
+ganji_data2 = ganji['ganji_data2']
 ganji_url = ganji['ganji_url']
 
 
@@ -45,6 +45,7 @@ def get_pages_info(url):
                 '交易地点':places.get_text(),
                 'url': url
             }
-            ganji_data1.insert_one(data)
+            ganji_data2.insert_one(data)
     except Exception as e:
         print(e)
+        time.sleep(3)

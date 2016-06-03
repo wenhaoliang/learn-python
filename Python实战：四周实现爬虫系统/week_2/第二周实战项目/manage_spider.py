@@ -1,7 +1,7 @@
 import time
 from multiprocessing import Pool
 import multiprocessing
-from page_parsing import get_pages, get_pages_info,ganji_url,ganji_data1
+from page_parsing import get_pages, get_pages_info,ganji_url,ganji_data2
 
 urls = [
     'http://zz.ganji.com/jiaju/',
@@ -37,7 +37,7 @@ urls = [
 
 if __name__ == '__main__':
     db_urls = [item['url'] for item in ganji_url.find()]
-    index_urls = [item['url'] for item in ganji_data1.find()]
+    index_urls = [item['url'] for item in ganji_data2.find()]
     x = set(db_urls)
     y = set(index_urls)
     rest_of_urls = x - y
@@ -45,26 +45,10 @@ if __name__ == '__main__':
     pool.map(get_pages_info, rest_of_urls)
     pool.close()
     pool.join()
-
-
-
-
-
     # pool = Pool()
-    # for i in range(4):
-    #     pr = multiprocessing.Process(target=get_pages_())
-    #     pr.close()
-    #     pr.join()
+    # pool.map(get_pages, urls)
     # pool.close()
     # pool.join()
-    # process1 = multiprocessing.Process(target=get_pages(), args=(urls,))
-    # process1.start()
-    # process1.join()
-    # process2 = multiprocessing.Process(target= get_pages_)
-    # process2.start()
-    # process2.join()
-    # #process1.close()
-    # process2.close()
 
 
 

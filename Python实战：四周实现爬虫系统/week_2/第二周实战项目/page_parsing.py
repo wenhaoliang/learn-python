@@ -28,6 +28,9 @@ def get_pages(base_url):
 
 
 def get_pages_info(url):
+    if "zhuanzhuan" in url:
+        ganji_url.delete_one({"url": url})
+        return
     try:
         wb_data = requests.get(url)
         soup = BeautifulSoup(wb_data.text, 'lxml')

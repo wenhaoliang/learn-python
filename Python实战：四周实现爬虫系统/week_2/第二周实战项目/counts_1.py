@@ -4,7 +4,7 @@ import pymongo
 import time
 client = pymongo.MongoClient('localhost', 27017)
 ganji = client['ganji']
-ganji_data1 = ganji['ganji_data1']
+ganji_data1 = ganji['ganji_data3']
 ganji_url = ganji['ganji_url']
 
 
